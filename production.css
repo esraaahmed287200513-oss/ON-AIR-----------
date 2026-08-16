@@ -1,0 +1,1089 @@
+/* =====================================================
+   ON AIR بالعافيةِ
+   PRODUCTION SECTION
+===================================================== */
+
+.production-section {
+
+    position: relative;
+    width: 100%;
+
+    padding:
+        90px
+        clamp(25px, 6vw, 90px)
+        140px;
+
+    background: #010A13;
+
+    overflow: hidden;
+
+}
+
+
+/* =====================================================
+   BACKGROUND GRID
+===================================================== */
+
+.production-section::before {
+
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background-image:
+
+        linear-gradient(
+            rgba(78, 132, 132, .035) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(78, 132, 132, .035) 1px,
+            transparent 1px
+        );
+
+    background-size: 30px 30px;
+
+    pointer-events: none;
+
+}
+
+
+/* =====================================================
+   PRODUCTION INTRO
+===================================================== */
+
+.production-header {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: min(1200px, 100%);
+
+    margin: 0 auto 55px;
+
+    direction: rtl;
+
+    text-align: right;
+
+}
+
+
+.production-header-label {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-start;
+
+    gap: 10px;
+
+    margin-bottom: 18px;
+
+    color: var(--beige);
+
+    font-family:
+        "Space Mono",
+        monospace;
+
+    font-size: 10px;
+
+    letter-spacing: .18em;
+
+}
+
+
+.production-dot {
+
+    width: 7px;
+    height: 7px;
+
+    flex: 0 0 7px;
+
+    border-radius: 50%;
+
+    background: var(--teal);
+
+    box-shadow:
+        0 0 12px
+        rgba(78, 132, 132, .5);
+
+}
+
+
+.production-title {
+
+    margin: 0;
+
+    color: var(--cream);
+
+    font-family:
+        "Tajawal",
+        "Cairo",
+        sans-serif;
+
+    font-size:
+        clamp(38px, 5vw, 68px);
+
+    font-weight: 400;
+
+    line-height: 1.15;
+
+}
+
+
+.production-subtitle {
+
+    margin-top: 14px;
+
+    color: var(--beige);
+
+    font-family:
+        "Tajawal",
+        "Cairo",
+        sans-serif;
+
+    font-size:
+        clamp(20px, 2.5vw, 30px);
+
+    font-weight: 400;
+
+}
+
+
+.production-description {
+
+    max-width: 520px;
+
+    margin-top: 12px;
+
+    color: var(--gray);
+
+    font-family:
+        "Cairo",
+        sans-serif;
+
+    font-size: 12px;
+
+    line-height: 1.9;
+
+}
+
+
+/* =====================================================
+   TWO COLUMNS
+===================================================== */
+
+.production-layout {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: min(1200px, 100%);
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1fr);
+
+    gap: 35px;
+
+    align-items: stretch;
+
+}
+
+
+/* =====================================================
+   SHARED PANEL
+===================================================== */
+
+.production-panel {
+
+    position: relative;
+
+    min-width: 0;
+
+    border:
+        1px solid
+        rgba(216, 200, 181, .22);
+
+    background:
+        rgba(7, 18, 27, .78);
+
+    overflow: hidden;
+
+}
+
+
+.production-panel::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(78, 132, 132, .035),
+            transparent 55%
+        );
+
+    pointer-events: none;
+
+}
+
+
+/* =====================================================
+   PANEL HEADER
+===================================================== */
+
+.production-panel-header {
+
+    position: relative;
+
+    z-index: 2;
+
+    min-height: 72px;
+
+    padding: 20px 25px;
+
+    border-bottom:
+        1px solid
+        rgba(216, 200, 181, .16);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    direction: ltr;
+
+}
+
+
+.production-panel-title {
+
+    color: var(--cream);
+
+    font-family:
+        "Space Mono",
+        monospace;
+
+    font-size: 11px;
+
+    letter-spacing: .14em;
+
+}
+
+
+.production-panel-count {
+
+    color: var(--gray);
+
+    font-family:
+        "Space Mono",
+        monospace;
+
+    font-size: 8px;
+
+    letter-spacing: .12em;
+
+}
+
+
+/* =====================================================
+   PRODUCTION STATUS
+===================================================== */
+
+.production-status-list {
+
+    position: relative;
+
+    z-index: 2;
+
+    padding: 18px 25px 25px;
+
+}
+
+
+/* =====================================================
+   STATUS ITEM
+===================================================== */
+
+.production-status-item {
+
+    position: relative;
+
+    min-height: 76px;
+
+    padding: 16px 0;
+
+    display: grid;
+
+    grid-template-columns:
+        40px
+        1fr
+        auto;
+
+    align-items: center;
+
+    gap: 15px;
+
+    border-bottom:
+        1px solid
+        rgba(216, 200, 181, .12);
+
+}
+
+
+.production-status-item:last-child {
+
+    border-bottom: 0;
+
+}
+
+
+/* =====================================================
+   STATUS NUMBER
+===================================================== */
+
+.status-number {
+
+    color: var(--teal);
+
+    font-family:
+        "Space Mono",
+        monospace;
+
+    font-size: 9px;
+
+    letter-spacing: .08em;
+
+}
+
+
+/* =====================================================
+   STATUS INFO
+===================================================== */
+
+.status-info {
+
+    min-width: 0;
+
+}
+
+
+.status-title {
+
+    color: var(--cream);
+
+    font-family:
+        "Space Mono",
+        monospace;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: .08em;
+
+}
+
+
+/* =====================================================
+   STATUS STATE
+===================================================== */
+
+.status-state {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    min-width: 82px;
+
+    padding: 7px 10px;
+
+    border:
+        1px solid
+        rgba(216, 200, 181, .16);
+
+    color: var(--gray);
+
+    font-family:
+        "Space Mono",
+        monospace;
+
+    font-size: 7px;
+
+    letter-spacing: .08em;
+
+    white-space: nowrap;
+
+}
+
+
+/* =====================================================
+   STATUS LIGHT
+===================================================== */
+
+.status-light {
+
+    width: 7px;
+    height: 7px;
+
+    flex: 0 0 7px;
+
+    border-radius: 50%;
+
+}
+
+
+/* =====================================================
+   IDEA — GOLD / STATIC
+===================================================== */
+
+.production-status-item.idea
+.status-light {
+
+    background: #D8B35A;
+
+    box-shadow:
+        0 0 10px
+        rgba(216, 179, 90, .45);
+
+}
+
+
+.production-status-item.idea
+.status-state {
+
+    color: #D8B35A;
+
+    border-color:
+        rgba(216, 179, 90, .28);
+
+}
+
+
+/* =====================================================
+   SCRIPT — RED / BLINKING
+===================================================== */
+
+.production-status-item.script
+.status-light {
+
+    background: #D92832;
+
+    box-shadow:
+        0 0 10px
+        rgba(217, 40, 50, .55);
+
+    animation:
+        scriptPulse 1.15s ease-in-out infinite;
+
+}
+
+
+.production-status-item.script
+.status-state {
+
+    color: #D92832;
+
+    border-color:
+        rgba(217, 40, 50, .28);
+
+}
+
+
+@keyframes scriptPulse {
+
+    0%,
+    100% {
+
+        opacity: 1;
+
+        box-shadow:
+            0 0 10px
+            rgba(217, 40, 50, .55);
+
+    }
+
+    50% {
+
+        opacity: .25;
+
+        box-shadow:
+            none;
+
+    }
+
+}
+
+
+/* =====================================================
+   LOCKED STATUS
+===================================================== */
+
+.production-status-item.locked {
+
+    opacity: .42;
+
+}
+
+
+.production-status-item.locked
+.status-title {
+
+    color: var(--gray);
+
+}
+
+
+.production-status-item.locked
+.status-state {
+
+    color: #737777;
+
+}
+
+
+.status-lock {
+
+    font-size: 12px;
+
+    filter:
+        grayscale(1);
+
+}
+
+
+/* =====================================================
+   DELIVERABLES
+===================================================== */
+
+.deliverables-list {
+
+    position: relative;
+
+    z-index: 2;
+
+    padding: 18px 25px 25px;
+
+}
+
+
+/* =====================================================
+   DELIVERABLE ITEM
+===================================================== */
+
+.deliverable-item {
+
+    position: relative;
+
+    min-height: 88px;
+
+    padding: 18px 0;
+
+    border-bottom:
+        1px solid
+        rgba(216, 200, 181, .12);
+
+    display: grid;
+
+    grid-template-columns:
+        40px
+        1fr
+        auto;
+
+    align-items: center;
+
+    gap: 15px;
+
+}
+
+
+.deliverable-item:last-child {
+
+    border-bottom: 0;
+
+}
+
+
+/* =====================================================
+   DELIVERABLE NUMBER
+===================================================== */
+
+.deliverable-number {
+
+    width: 29px;
+    height: 29px;
+
+    border:
+        1px solid
+        rgba(216, 200, 181, .25);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: var(--gray);
+
+    background: #07121B;
+
+    font-family:
+        "Space Mono",
+        monospace;
+
+    font-size: 8px;
+
+}
+
+
+/* =====================================================
+   DELIVERABLE INFO
+===================================================== */
+
+.deliverable-info {
+
+    min-width: 0;
+
+}
+
+
+.deliverable-title {
+
+    color: var(--cream);
+
+    font-family:
+        "Space Mono",
+        monospace;
+
+    font-size: 13px;
+
+    letter-spacing: .08em;
+
+}
+
+
+.deliverable-subtitle {
+
+    margin-top: 5px;
+
+    color: var(--gray);
+
+    font-family:
+        "Cairo",
+        sans-serif;
+
+    font-size: 9px;
+
+}
+
+
+/* =====================================================
+   DELIVERABLE STATUS
+===================================================== */
+
+.deliverable-status {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 7px;
+
+    min-width: 105px;
+
+    padding: 7px 10px;
+
+    border:
+        1px solid
+        rgba(216, 200, 181, .16);
+
+    color: var(--gray);
+
+    font-family:
+        "Space Mono",
+        monospace;
+
+    font-size: 7px;
+
+    letter-spacing: .08em;
+
+    white-space: nowrap;
+
+}
+
+
+/* =====================================================
+   LOCKED
+===================================================== */
+
+.deliverable-item.locked {
+
+    opacity: .42;
+
+}
+
+
+.deliverable-item.locked
+.deliverable-status {
+
+    color: #737777;
+
+}
+
+
+.lock-icon {
+
+    font-size: 11px;
+
+    filter:
+        grayscale(1);
+
+}
+
+
+/* =====================================================
+   COMING SOON
+===================================================== */
+
+.deliverable-item.coming-soon {
+
+    opacity: .78;
+
+}
+
+
+.deliverable-item.coming-soon
+.deliverable-status {
+
+    color: #D8B35A;
+
+    border-color:
+        rgba(216, 179, 90, .28);
+
+}
+
+
+/* =====================================================
+   AVAILABLE
+===================================================== */
+
+.deliverable-item.available {
+
+    opacity: 1;
+
+}
+
+
+.deliverable-item.available
+.deliverable-status {
+
+    color: var(--teal);
+
+    border-color:
+        rgba(78, 132, 132, .35);
+
+    box-shadow:
+        0 0 15px
+        rgba(78, 132, 132, .06);
+
+}
+
+
+/* =====================================================
+   OPEN BUTTON
+===================================================== */
+
+.deliverable-link {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-width: 105px;
+
+    padding: 7px 10px;
+
+    border:
+        1px solid
+        rgba(78, 132, 132, .4);
+
+    color: var(--teal);
+
+    text-decoration: none;
+
+    font-family:
+        "Space Mono",
+        monospace;
+
+    font-size: 7px;
+
+    letter-spacing: .08em;
+
+    transition:
+        background .25s ease,
+        color .25s ease;
+
+}
+
+
+.deliverable-link:hover {
+
+    background: var(--teal);
+
+    color: #010A13;
+
+}
+
+
+/* =====================================================
+   PRODUCTION FOOTER
+===================================================== */
+
+.production-footer {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: min(1200px, 100%);
+
+    margin: 35px auto 0;
+
+    padding-top: 20px;
+
+    border-top:
+        1px solid
+        rgba(216, 200, 181, .14);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+}
+
+
+.production-footer-left,
+.production-footer-right {
+
+    color: var(--gray);
+
+    font-family:
+        "Space Mono",
+        monospace;
+
+    font-size: 8px;
+
+    letter-spacing: .12em;
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 850px) {
+
+    .production-section {
+
+        padding:
+            65px 18px 100px;
+
+    }
+
+
+    .production-layout {
+
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+
+    }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .production-title {
+
+        font-size: 38px;
+
+    }
+
+
+    .production-subtitle {
+
+        font-size: 21px;
+
+    }
+
+
+    .production-description {
+
+        font-size: 10px;
+
+    }
+
+
+    .production-panel-header {
+
+        min-height: 62px;
+
+        padding: 17px;
+
+    }
+
+
+    .production-panel-title {
+
+        font-size: 9px;
+
+    }
+
+
+    .production-panel-count {
+
+        font-size: 7px;
+
+    }
+
+
+    .production-status-list,
+    .deliverables-list {
+
+        padding:
+            10px 15px 18px;
+
+    }
+
+
+    .production-status-item,
+    .deliverable-item {
+
+        min-height: 78px;
+
+        grid-template-columns:
+            30px
+            1fr;
+
+        gap: 10px;
+
+    }
+
+
+    .status-state,
+    .deliverable-status,
+    .deliverable-link {
+
+        grid-column: 2;
+
+        justify-self: start;
+
+        min-width: 100px;
+
+        margin-top: 2px;
+
+    }
+
+
+    .status-title,
+    .deliverable-title {
+
+        font-size: 11px;
+
+    }
+
+
+    .deliverable-subtitle {
+
+        font-size: 8px;
+
+    }
+
+
+    .production-footer {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+    }
+
+}
+
+
+/* =====================================================
+   VERY SMALL
+===================================================== */
+
+@media (max-width: 380px) {
+
+    .production-section {
+
+        padding-left: 12px;
+
+        padding-right: 12px;
+
+    }
+
+
+    .production-title {
+
+        font-size: 34px;
+
+    }
+
+}
+/* =====================================================
+   IDEA — GOLD ACTION
+===================================================== */
+
+.production-status-item.idea .status-action {
+    color: #d8b45a !important;
+    border: 1px solid rgba(216, 180, 90, 0.55);
+    background: rgba(216, 180, 90, 0.04);
+    font-weight: 500;
+}
+
+.production-status-item.idea .status-action:hover {
+    color: #d8b45a !important;
+    border-color: rgba(216, 180, 90, 0.9);
+    background: rgba(216, 180, 90, 0.10);
+} 
+.deliverable-item.open .deliverable-button {
+    color: #C9A227;
+}

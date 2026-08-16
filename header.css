@@ -1,0 +1,694 @@
+/* =========================================
+   GLOBAL
+========================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #020b13;
+    color: #f2dfc1;
+}
+
+
+/* =========================================
+   OPENING SECTION
+========================================= */
+
+.opening-intro {
+    min-height: 100vh;
+    width: 100%;
+    padding: 55px 7% 90px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+    background: #020b13;
+    overflow: hidden;
+}
+
+
+/* Grid */
+
+.opening-intro::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background-image:
+        linear-gradient(
+            rgba(255,255,255,0.025) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,0.025) 1px,
+            transparent 1px
+        );
+
+    background-size: 42px 42px;
+    pointer-events: none;
+}
+
+
+/* Glow */
+
+.opening-intro::after {
+    content: "";
+    position: absolute;
+
+    width: 600px;
+    height: 600px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(36, 92, 99, 0.25),
+            transparent 70%
+        );
+
+    top: 30%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   META
+========================================= */
+
+.opening-meta {
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+
+    position: absolute;
+    top: 40px;
+    left: 0;
+
+    padding: 0 7%;
+
+    font-family: monospace;
+    font-size: 11px;
+    letter-spacing: 4px;
+
+    color: rgba(242,223,193,.55);
+
+    z-index: 2;
+}
+
+
+/* =========================================
+   LOGO
+========================================= */
+
+.opening-logo {
+    position: relative;
+    z-index: 2;
+
+    text-align: center;
+    margin-top: 30px;
+}
+
+.opening-onair {
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: clamp(80px, 11vw, 170px);
+
+    font-weight: 900;
+    line-height: .85;
+
+    letter-spacing: -8px;
+
+    color: #f2dfc1;
+
+    white-space: nowrap;
+}
+
+.opening-ar {
+    margin-top: 25px;
+
+    font-family:
+        Tahoma,
+        Arial,
+        sans-serif;
+
+    font-size: clamp(48px, 6vw, 85px);
+
+    color: #62a2a1;
+
+    line-height: 1;
+}
+
+
+/* =========================================
+   LINE
+========================================= */
+
+.opening-line {
+    width: 48px;
+    height: 1px;
+
+    background: #d9c4a5;
+
+    margin: 45px 0 40px;
+
+    position: relative;
+    z-index: 2;
+}
+
+
+/* =========================================
+   MESSAGE
+========================================= */
+
+.opening-message {
+    position: relative;
+    z-index: 2;
+
+    text-align: center;
+
+    color: #f2dfc1;
+
+    font-family:
+        Tahoma,
+        Arial,
+        sans-serif;
+
+    font-size: clamp(38px, 5vw, 70px);
+
+    line-height: 1.4;
+    font-weight: 400;
+}
+
+
+/* English hidden by default */
+
+.en-content {
+    display: none;
+}
+
+
+/* English language */
+
+html[lang="en"] .ar-content {
+    display: none;
+}
+
+html[lang="en"] .en-content {
+    display: block;
+}
+
+
+/* =========================================
+   OPENING NOTE
+========================================= */
+
+.opening-note {
+    position: relative;
+    z-index: 2;
+
+    text-align: center;
+
+    margin-top: 35px;
+
+    color: rgba(242,223,193,.65);
+
+    font-family:
+        Tahoma,
+        Arial,
+        sans-serif;
+
+    font-size: 18px;
+
+    line-height: 1.9;
+}
+
+.opening-note p {
+    margin: 0;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.site-header {
+    width: 100%;
+    min-height: 95px;
+
+    padding: 20px 4%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    background: rgba(2, 9, 19, 0.96);
+
+    border-top: 1px solid rgba(242,223,193,.2);
+    border-bottom: 1px solid rgba(242,223,193,.2);
+
+    position: sticky;
+    top: 0;
+
+    z-index: 100;
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+
+/* =========================================
+   HEADER LOGO
+========================================= */
+
+.header-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    color: #f2dfc1;
+
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.header-logo small {
+    color: #62a2a1;
+
+    font-family:
+        Tahoma,
+        Arial,
+        sans-serif;
+
+    font-size: 17px;
+}
+
+
+/* =========================================
+   HEADER BUTTONS
+========================================= */
+
+.sound-button,
+.menu-button,
+.language-switch button {
+
+    background: transparent;
+
+    border: 1px solid rgba(242,223,193,.25);
+
+    color: #d8c4a7;
+
+    padding: 14px 22px;
+
+    font-family: monospace;
+
+    letter-spacing: 3px;
+
+    font-size: 12px;
+
+    cursor: pointer;
+
+    transition:
+        border-color .3s ease,
+        color .3s ease,
+        background .3s ease;
+}
+
+.sound-button:hover,
+.menu-button:hover,
+.language-switch button:hover {
+
+    border-color: #d8c4a7;
+    color: #fff;
+}
+
+
+/* =========================================
+   LANGUAGE SWITCH
+========================================= */
+
+.language-switch {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.language-switch span {
+    color: rgba(242,223,193,.35);
+}
+
+.language-switch button {
+    padding: 10px 12px;
+}
+
+.language-switch button.active {
+    color: #62a2a1;
+    border-color: #62a2a1;
+}
+
+
+/* =========================================
+   TEAM STATEMENT
+========================================= */
+
+.team-statement {
+
+    width: min(90%, 1100px);
+
+    margin: 90px auto 120px;
+
+    padding: 55px 48px;
+
+    border: 1px solid rgba(239, 229, 211, 0.28);
+
+    background: rgba(13, 28, 45, 0.55);
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+/* =========================================
+   STATEMENT LABEL
+========================================= */
+
+.statement-label {
+
+    font-family: monospace;
+
+    font-size: 13px;
+
+    letter-spacing: 5px;
+
+    color: #c9b18d;
+
+    margin-bottom: 45px;
+}
+
+
+/* =========================================
+   ARABIC STATEMENT
+========================================= */
+
+.statement-ar {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 2px;
+
+    font-family:
+        Tahoma,
+        Arial,
+        sans-serif;
+
+    font-size: clamp(42px, 6vw, 82px);
+
+    line-height: 1.15;
+
+    font-weight: 400;
+
+    color: #f2eadf;
+}
+
+.statement-ar span:nth-child(2) {
+    color: #65a5a4;
+}
+
+
+/* =========================================
+   ENGLISH STATEMENT
+========================================= */
+
+.statement-en {
+
+    display: none;
+
+    flex-direction: column;
+
+    gap: 3px;
+
+    margin-top: 38px;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-weight: 800;
+
+    font-size: clamp(25px, 3vw, 45px);
+
+    letter-spacing: 3px;
+
+    color: #f2eadf;
+}
+
+.statement-en span:nth-child(2) {
+    color: #c9b18d;
+}
+
+
+/* =========================================
+   LANGUAGE CONTROL
+========================================= */
+
+html[lang="en"] .statement-ar {
+    display: none;
+}
+
+html[lang="en"] .statement-en {
+    display: flex;
+}
+
+
+/* =========================================
+   STATEMENT LINE
+========================================= */
+
+.statement-line {
+
+    width: 100%;
+
+    height: 1px;
+
+    background: rgba(239, 229, 211, 0.25);
+
+    margin-top: 45px;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+    /* Opening */
+
+    .opening-intro {
+        min-height: 100svh;
+
+        padding:
+            80px
+            25px
+            60px;
+    }
+
+
+    .opening-meta {
+        top: 25px;
+
+        padding: 0 25px;
+
+        font-size: 8px;
+
+        letter-spacing: 2px;
+    }
+
+
+    .opening-meta span:nth-child(2) {
+        display: none;
+    }
+
+
+    .opening-onair {
+        font-size: 70px;
+
+        letter-spacing: -5px;
+    }
+
+
+    .opening-ar {
+        font-size: 48px;
+    }
+
+
+    .opening-message {
+        font-size: 38px;
+    }
+
+
+    .opening-note {
+        font-size: 16px;
+
+        margin-top: 25px;
+    }
+
+
+    /* Header */
+
+    .site-header {
+
+        min-height: auto;
+
+        padding: 15px;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+        gap: 10px;
+    }
+
+
+    .header-logo {
+
+        width: 100%;
+
+        justify-content: center;
+
+        margin-bottom: 5px;
+    }
+
+
+    .header-logo span {
+        font-size: 20px;
+    }
+
+
+    .header-logo small {
+        font-size: 15px;
+    }
+
+
+    .sound-button,
+    .menu-button,
+    .language-switch button {
+
+        padding: 11px 13px;
+
+        font-size: 10px;
+
+        letter-spacing: 2px;
+    }
+
+
+    .language-switch {
+        gap: 5px;
+    }
+
+
+    /* Team Statement */
+
+    .team-statement {
+
+        width: 88%;
+
+        margin: 60px auto 80px;
+
+        padding: 35px 25px;
+    }
+
+
+    .statement-label {
+
+        font-size: 10px;
+
+        letter-spacing: 3px;
+
+        margin-bottom: 30px;
+    }
+
+
+    .statement-ar {
+
+        font-size: 43px;
+    }
+
+
+    .statement-en {
+
+        font-size: 23px;
+
+        letter-spacing: 2px;
+
+        margin-top: 30px;
+    }
+
+
+    .statement-line {
+
+        margin-top: 30px;
+    }
+}
+
+
+/* =========================================
+   VERY SMALL SCREENS
+========================================= */
+
+@media (max-width: 400px) {
+
+    .opening-onair {
+        font-size: 58px;
+    }
+
+    .opening-ar {
+        font-size: 40px;
+    }
+
+    .opening-message {
+        font-size: 32px;
+    }
+
+    .opening-note {
+        font-size: 14px;
+    }
+
+    .sound-button,
+    .menu-button {
+        padding: 10px 11px;
+    }
+
+    .statement-ar {
+        font-size: 36px;
+    }
+
+    .statement-en {
+        font-size: 19px;
+    }
+}

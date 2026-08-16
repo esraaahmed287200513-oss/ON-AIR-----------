@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    >
+
+    <title>ON AIR بالعَافِية</title>
+
+    <meta
+        name="description"
+        content="ON AIR بالعَافِية — Student Film Production Team"
+    >
+
+    <!-- FONTS -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&family=Space+Mono:wght@400;700&family=Tajawal:wght@300;400;500;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+    <!-- =========================
+         CAMERA SOUND
+    ========================== -->
+
+    <audio
+        id="cameraSound"
+        src="camera-shutter.wav"
+        preload="auto">
+    </audio>
+
+
+    <!-- =========================
+         LOADING SCREEN
+    ========================== -->
+
+    <div id="loader">
+
+        <div class="loader-logo">
+            ON AIR
+        </div>
+
+        <div class="loader-line"></div>
+
+        <div class="loader-status">
+            INITIALIZING...
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         WEBSITE
+    ========================== -->
+
+    <main id="website">
+
+        <!-- =========================
+             TOP BAR
+        ========================== -->
+
+        <header class="top-bar">
+
+            <div class="rec">
+
+                <span class="rec-dot"></span>
+
+                <span>REC</span>
+
+            </div>
+
+
+            <div class="technical-info">
+
+                <span>FRAME 001</span>
+
+                <span class="separator">|</span>
+
+                <span>ISO 800</span>
+
+                <span class="separator">|</span>
+
+                <span>24 FPS</span>
+
+            </div>
+
+
+            <nav class="language">
+
+                <button
+                    type="button"
+                    class="active"
+                    data-lang="ar"
+                    aria-pressed="true">
+                    AR
+                </button>
+
+                <span>/</span>
+
+                <button
+                    type="button"
+                    data-lang="en"
+                    aria-pressed="false">
+                    EN
+                </button>
+
+            </nav>
+
+        </header>
+
+
+        <!-- =========================
+             HERO
+        ========================== -->
+
+        <section
+            class="hero"
+            id="hero"
+            tabindex="0"
+        >
+
+            <div class="hero-background"></div>
+
+
+            <!-- CAMERA CORNERS -->
+
+            <div class="camera-corner top-left"></div>
+
+            <div class="camera-corner top-right"></div>
+
+            <div class="camera-corner bottom-left"></div>
+
+            <div class="camera-corner bottom-right"></div>
+
+
+            <!-- CENTER MARKS -->
+
+            <div class="cross cross-left"></div>
+
+            <div class="cross cross-right"></div>
+
+
+            <!-- =========================
+                 HERO CONTENT
+            ========================== -->
+
+            <div class="hero-content">
+
+
+                <p class="eyebrow">
+                    STUDENT FILM PRODUCTION TEAM
+                </p>
+
+
+                <!-- =========================
+                     LOGO
+                ========================== -->
+
+                <div class="team-logo">
+
+                    <div class="english-logo">
+
+                        <span class="on-air">ON AIR</span>
+
+                    </div>
+
+
+                    <div class="arabic-logo">
+
+                        بالعَافِية
+
+                    </div>
+
+                </div>
+
+
+                <!-- SMALL LINE -->
+
+                <div class="small-line"></div>
+
+
+                <!-- =========================
+                     TEAM STATEMENT
+                ========================== -->
+
+                <p class="hero-description">
+
+                    <span>
+                        One Team, One Story
+                    </span>
+
+                    <span>
+                        Made Anyway
+                    </span>
+
+                </p>
+
+
+                <!-- =========================
+                     FINAL STATEMENT
+                ========================== -->
+
+                <p class="final-statement">
+
+                    لو الخطة نجحت ، يبقى بالصدفة
+
+                </p>
+
+
+            </div>
+
+
+        </section>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

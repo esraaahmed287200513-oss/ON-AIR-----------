@@ -1,0 +1,715 @@
+/* =====================================================
+   IDEA SECTION
+   ON AIR بالعافية
+===================================================== */
+
+.idea-section {
+
+    position: relative;
+
+    width: 100%;
+    height: 100vh;
+    min-height: 600px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(78, 132, 132, 0.12),
+            transparent 55%
+        ),
+        #0B1824;
+
+    color: #F3DFC2;
+
+    overflow: hidden;
+
+}
+
+
+/* =====================================================
+   CAMERA UI
+===================================================== */
+
+.camera-ui {
+
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    border: 1px solid rgba(243, 223, 194, 0.25);
+
+}
+
+
+/* =====================================================
+   SUBTLE GRID
+===================================================== */
+
+.camera-ui::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background-image:
+
+        linear-gradient(
+            rgba(243, 223, 194, 0.035) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(243, 223, 194, 0.035) 1px,
+            transparent 1px
+        );
+
+    background-size: 40px 40px;
+
+    pointer-events: none;
+
+}
+
+
+/* =====================================================
+   TOP CAMERA DATA
+===================================================== */
+
+.camera-data-top {
+
+    position: absolute;
+
+    top: 32px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    font-family: monospace;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 4px;
+
+    color: #F3DFC2;
+
+    white-space: nowrap;
+
+}
+
+.camera-data-top span,
+.camera-data-bottom span {
+
+    margin: 0 12px;
+
+    opacity: .6;
+
+}
+
+
+/* =====================================================
+   LANGUAGE
+===================================================== */
+
+.camera-language {
+
+    position: absolute;
+
+    top: 32px;
+    left: 40px;
+
+    font-family: monospace;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    color: #F3DFC2;
+
+}
+
+.camera-language span {
+
+    opacity: .5;
+
+    margin: 0 7px;
+
+}
+
+
+/* =====================================================
+   LOGO
+===================================================== */
+
+.camera-logo {
+
+    position: absolute;
+
+    top: 75px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 2px;
+
+    color: #4E8484;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    z-index: 5;
+
+}
+
+.camera-logo span:first-child {
+
+    font-size: clamp(20px, 2vw, 30px);
+
+    letter-spacing: 4px;
+
+}
+
+.camera-logo span:last-child {
+
+    font-family: Arial, sans-serif;
+
+    font-size: clamp(16px, 1.6vw, 23px);
+
+    letter-spacing: 1px;
+
+}
+
+
+/* =====================================================
+   REC
+===================================================== */
+
+.recording {
+
+    position: absolute;
+
+    top: 32px;
+    right: 40px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    font-family: monospace;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+}
+
+
+/* RED LIGHT */
+
+.rec-dot {
+
+    width: 12px;
+    height: 12px;
+
+    border-radius: 50%;
+
+    background: #ff453a;
+
+    box-shadow:
+        0 0 8px rgba(255, 69, 58, .8),
+        0 0 20px rgba(255, 69, 58, .45);
+
+    animation: recordingLight 1.2s infinite;
+
+}
+
+
+/* REC TEXT */
+
+.rec-text {
+
+    color: #F3DFC2;
+
+}
+
+
+/* =====================================================
+   RECORDING ANIMATION
+===================================================== */
+
+@keyframes recordingLight {
+
+    0%,
+    45% {
+
+        opacity: 1;
+
+        box-shadow:
+            0 0 8px rgba(255, 69, 58, .9),
+            0 0 20px rgba(255, 69, 58, .5);
+
+    }
+
+    50%,
+    100% {
+
+        opacity: .25;
+
+        box-shadow: none;
+
+    }
+
+}
+
+
+/* =====================================================
+   CAMERA CORNERS
+===================================================== */
+
+.frame-corner {
+
+    position: absolute;
+
+    width: 65px;
+    height: 65px;
+
+    border-color: #F3DFC2;
+
+    opacity: .85;
+
+}
+
+
+/* TOP LEFT */
+
+.frame-corner.top-left {
+
+    top: 90px;
+    left: 40px;
+
+    border-top: 2px solid;
+    border-left: 2px solid;
+
+}
+
+
+/* TOP RIGHT */
+
+.frame-corner.top-right {
+
+    top: 90px;
+    right: 40px;
+
+    border-top: 2px solid;
+    border-right: 2px solid;
+
+}
+
+
+/* BOTTOM LEFT */
+
+.frame-corner.bottom-left {
+
+    bottom: 70px;
+    left: 40px;
+
+    border-bottom: 2px solid;
+    border-left: 2px solid;
+
+}
+
+
+/* BOTTOM RIGHT */
+
+.frame-corner.bottom-right {
+
+    bottom: 70px;
+    right: 40px;
+
+    border-bottom: 2px solid;
+    border-right: 2px solid;
+
+}
+
+
+/* =====================================================
+   IDEA CONTENT
+===================================================== */
+
+.idea-content {
+
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: min(900px, 85%);
+
+    text-align: center;
+
+    z-index: 3;
+
+}
+
+
+/* =====================================================
+   MAIN SENTENCE
+===================================================== */
+
+.idea-title {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 5px;
+
+    color: #F3DFC2;
+
+    font-weight: 700;
+
+    line-height: 1.25;
+
+}
+
+
+/* first line */
+
+.idea-title span:first-child {
+
+    font-size: clamp(26px, 4vw, 52px);
+
+}
+
+
+/* second line */
+
+.idea-title span:last-child {
+
+    font-size: clamp(30px, 5vw, 68px);
+
+}
+
+
+/* =====================================================
+   DIVIDER
+===================================================== */
+
+.idea-divider {
+
+    width: 180px;
+    height: 2px;
+
+    margin: 30px auto;
+
+    background: #F3DFC2;
+
+    opacity: .8;
+
+}
+
+
+/* =====================================================
+   SECOND TEXT
+===================================================== */
+
+.idea-subtitle {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+
+    color: #F3DFC2;
+
+    font-weight: 500;
+
+}
+
+
+/* first sentence */
+
+.idea-subtitle span:first-child {
+
+    font-size: clamp(19px, 2.3vw, 30px);
+
+}
+
+
+/* second sentence */
+
+.idea-subtitle span:last-child {
+
+    font-size: clamp(16px, 1.8vw, 24px);
+
+    color: #4E8484;
+
+    font-weight: 700;
+
+}
+
+
+/* =====================================================
+   BOTTOM DATA
+===================================================== */
+
+.camera-data-bottom {
+
+    position: absolute;
+
+    bottom: 30px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    font-family: monospace;
+
+    font-size: 12px;
+
+    letter-spacing: 4px;
+
+    color: #F3DFC2;
+
+    opacity: .8;
+
+    white-space: nowrap;
+
+}
+
+
+/* =====================================================
+   PLUS MARKS
+===================================================== */
+
+.plus-mark {
+
+    position: absolute;
+
+    font-family: monospace;
+
+    font-size: 28px;
+
+    font-weight: 300;
+
+    color: #F3DFC2;
+
+    opacity: .8;
+
+}
+
+.plus-left {
+
+    left: 7%;
+
+    top: 50%;
+
+}
+
+.plus-right {
+
+    right: 7%;
+
+    top: 50%;
+
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 700px) {
+
+    .idea-section {
+
+        height: 100svh;
+
+        min-height: 500px;
+
+    }
+
+
+    .camera-data-top {
+
+        top: 25px;
+
+        font-size: 9px;
+
+        letter-spacing: 2px;
+
+    }
+
+
+    .camera-language {
+
+        top: 25px;
+        left: 20px;
+
+        font-size: 10px;
+
+    }
+
+
+    .recording {
+
+        top: 25px;
+        right: 20px;
+
+        font-size: 10px;
+
+    }
+
+
+    .rec-dot {
+
+        width: 8px;
+        height: 8px;
+
+    }
+
+
+    .camera-logo {
+
+        top: 65px;
+
+    }
+
+
+    .camera-logo span:first-child {
+
+        font-size: 19px;
+
+    }
+
+
+    .camera-logo span:last-child {
+
+        font-size: 15px;
+
+    }
+
+
+    .frame-corner {
+
+        width: 35px;
+        height: 35px;
+
+    }
+
+
+    .frame-corner.top-left,
+    .frame-corner.top-right {
+
+        top: 75px;
+
+    }
+
+
+    .frame-corner.bottom-left,
+    .frame-corner.bottom-right {
+
+        bottom: 55px;
+
+    }
+
+
+    .frame-corner.top-left,
+    .frame-corner.bottom-left {
+
+        left: 20px;
+
+    }
+
+
+    .frame-corner.top-right,
+    .frame-corner.bottom-right {
+
+        right: 20px;
+
+    }
+
+
+    .idea-content {
+
+        width: 88%;
+
+    }
+
+
+    .idea-title span:first-child {
+
+        font-size: 25px;
+
+    }
+
+
+    .idea-title span:last-child {
+
+        font-size: 31px;
+
+    }
+
+
+    .idea-divider {
+
+        width: 100px;
+
+        margin: 22px auto;
+
+    }
+
+
+    .idea-subtitle span:first-child {
+
+        font-size: 18px;
+
+    }
+
+
+    .idea-subtitle span:last-child {
+
+        font-size: 16px;
+
+    }
+
+
+    .camera-data-bottom {
+
+        bottom: 22px;
+
+        font-size: 8px;
+
+        letter-spacing: 2px;
+
+    }
+
+
+    .plus-mark {
+
+        display: none;
+
+    }
+
+}

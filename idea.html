@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    >
+
+    <title>Idea — ON AIR بالعَافِية</title>
+
+
+    <style>
+
+        /* =====================================================
+           RESET
+        ===================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        html,
+        body {
+            width: 100%;
+            min-height: 100%;
+        }
+
+
+        body {
+
+            background: #0B1824;
+
+            color: #F3DFC2;
+
+            overflow: hidden;
+
+            font-family:
+                Arial,
+                Tahoma,
+                sans-serif;
+        }
+
+
+        /* =====================================================
+           IDEA SECTION
+        ===================================================== */
+
+        .idea-section {
+
+            position: relative;
+
+            width: 100%;
+
+            height: 100vh;
+            height: 100svh;
+
+            min-height: 500px;
+
+            overflow: hidden;
+
+            background:
+
+                radial-gradient(
+                    circle at center,
+                    rgba(78, 132, 132, 0.10),
+                    transparent 52%
+                ),
+
+                #0B1824;
+        }
+
+
+        /* =====================================================
+           CAMERA GRID
+        ===================================================== */
+
+        .idea-section::before {
+
+            content: "";
+
+            position: absolute;
+
+            inset: 0;
+
+            background-image:
+
+                linear-gradient(
+                    rgba(243, 223, 194, 0.035) 1px,
+                    transparent 1px
+                ),
+
+                linear-gradient(
+                    90deg,
+                    rgba(243, 223, 194, 0.035) 1px,
+                    transparent 1px
+                );
+
+            background-size: 40px 40px;
+
+            pointer-events: none;
+        }
+
+
+        /* =====================================================
+           CAMERA SCREEN
+        ===================================================== */
+
+        .camera-ui {
+
+            position: relative;
+
+            width: 100%;
+
+            height: 100%;
+
+            border: 1px solid
+                rgba(243, 223, 194, 0.22);
+        }
+
+
+        /* =====================================================
+           TOP DATA
+        ===================================================== */
+
+        .camera-data {
+
+            position: absolute;
+
+            top: 30px;
+
+            left: 50%;
+
+            transform:
+                translateX(-50%);
+
+            z-index: 5;
+
+            font-family: monospace;
+
+            font-size: 13px;
+
+            font-weight: 700;
+
+            letter-spacing: 4px;
+
+            color: #F3DFC2;
+
+            white-space: nowrap;
+        }
+
+
+        .camera-data span {
+
+            margin: 0 12px;
+
+            opacity: 0.55;
+        }
+
+
+        /* =====================================================
+           LANGUAGE
+        ===================================================== */
+
+        .language {
+
+            position: absolute;
+
+            top: 30px;
+
+            left: 38px;
+
+            z-index: 5;
+
+            font-family: monospace;
+
+            font-size: 13px;
+
+            font-weight: 700;
+
+            letter-spacing: 3px;
+
+            color: #F3DFC2;
+        }
+
+
+        .language span {
+
+            opacity: 0.5;
+
+            margin: 0 7px;
+        }
+
+
+        /* =====================================================
+           TEAM LOGO
+        ===================================================== */
+
+        .team-logo {
+
+            position: absolute;
+
+            top: 72px;
+
+            left: 50%;
+
+            transform:
+                translateX(-50%);
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            gap: 2px;
+
+            z-index: 6;
+
+            color: #4E8484;
+
+            text-align: center;
+
+            font-weight: 700;
+
+            opacity: 0;
+
+            animation:
+                logoIn 1s ease-out
+                0.15s forwards;
+        }
+
+
+        .team-logo .english {
+
+            font-size:
+                clamp(20px, 2vw, 30px);
+
+            letter-spacing: 4px;
+        }
+
+
+        .team-logo .arabic {
+
+            font-size:
+                clamp(15px, 1.5vw, 22px);
+
+            letter-spacing: 1px;
+        }
+
+
+        /* =====================================================
+           REC
+        ===================================================== */
+
+        .recording {
+
+            position: absolute;
+
+            top: 29px;
+
+            right: 38px;
+
+            z-index: 7;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            font-family: monospace;
+
+            font-size: 14px;
+
+            font-weight: 700;
+
+            letter-spacing: 2px;
+
+            color: #F3DFC2;
+        }
+
+
+        /* RED LIGHT */
+
+        .rec-dot {
+
+            width: 12px;
+
+            height: 12px;
+
+            border-radius: 50%;
+
+            background: #ff453a;
+
+            animation:
+                recBlink 1.15s infinite;
+
+            box-shadow:
+
+                0 0 8px
+                rgba(255, 69, 58, 0.9),
+
+                0 0 20px
+                rgba(255, 69, 58, 0.45);
+        }
+
+
+        /* =====================================================
+           REC BLINK
+        ===================================================== */
+
+        @keyframes recBlink {
+
+            0%,
+            42% {
+
+                opacity: 1;
+
+                box-shadow:
+
+                    0 0 8px
+                    rgba(255, 69, 58, 0.9),
+
+                    0 0 22px
+                    rgba(255, 69, 58, 0.55);
+            }
+
+
+            50%,
+            100% {
+
+                opacity: 0.22;
+
+                box-shadow: none;
+            }
+        }
+
+
+        /* =====================================================
+           CAMERA FRAME CORNERS
+        ===================================================== */
+
+        .corner {
+
+            position: absolute;
+
+            width: 65px;
+
+            height: 65px;
+
+            z-index: 4;
+
+            border-color: #F3DFC2;
+
+            opacity: 0.85;
+        }
+
+
+        /* TOP LEFT */
+
+        .corner.tl {
+
+            top: 88px;
+
+            left: 38px;
+
+            border-top: 2px solid;
+
+            border-left: 2px solid;
+        }
+
+
+        /* TOP RIGHT */
+
+        .corner.tr {
+
+            top: 88px;
+
+            right: 38px;
+
+            border-top: 2px solid;
+
+            border-right: 2px solid;
+        }
+
+
+        /* BOTTOM LEFT */
+
+        .corner.bl {
+
+            bottom: 68px;
+
+            left: 38px;
+
+            border-bottom: 2px solid;
+
+            border-left: 2px solid;
+        }
+
+
+        /* BOTTOM RIGHT */
+
+        .corner.br {
+
+            bottom: 68px;
+
+            right: 38px;
+
+            border-bottom: 2px solid;
+
+            border-right: 2px solid;
+        }
+
+
+        /* =====================================================
+           PLUS MARKS
+        ===================================================== */
+
+        .plus {
+
+            position: absolute;
+
+            top: 50%;
+
+            transform:
+                translateY(-50%);
+
+            z-index: 4;
+
+            color: #F3DFC2;
+
+            font-family: monospace;
+
+            font-size: 25px;
+
+            opacity: 0.75;
+        }
+
+
+        .plus.left {
+
+            left: 7%;
+        }
+
+
+        .plus.right {
+
+            right: 7%;
+        }
+
+
+        /* =====================================================
+           IDEA CONTENT
+        ===================================================== */
+
+        .idea-content {
+
+            position: absolute;
+
+            top: 50%;
+
+            left: 50%;
+
+            transform:
+                translate(-50%, -47%);
+
+            width:
+                min(900px, 86%);
+
+            text-align: center;
+
+            z-index: 10;
+
+            opacity: 0;
+
+            animation:
+                contentIn 1.4s
+                ease-out
+                0.3s
+                forwards;
+        }
+
+
+        /* =====================================================
+           MAIN SENTENCE
+        ===================================================== */
+
+        .idea-main {
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            gap: 7px;
+
+            color: #F3DFC2;
+
+            font-weight: 700;
+
+            line-height: 1.25;
+        }
+
+
+        /* إيه ده */
+
+        .idea-main .first-line {
+
+            font-size:
+                clamp(27px, 4vw, 50px);
+        }
+
+
+        /* هو احنا كنا هنحط */
+
+        .idea-main .second-line {
+
+            font-size:
+                clamp(29px, 4.8vw, 64px);
+        }
+
+
+        /* =====================================================
+           DIVIDER
+        ===================================================== */
+
+        .divider {
+
+            width: 180px;
+
+            height: 2px;
+
+            margin: 30px auto;
+
+            background: #F3DFC2;
+
+            opacity: 0.75;
+        }
+
+
+        /* =====================================================
+           SECOND TEXT
+        ===================================================== */
+
+        .idea-sub {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 12px;
+
+            font-weight: 500;
+
+            line-height: 1.4;
+        }
+
+
+        .idea-sub .wait {
+
+            font-size:
+                clamp(19px, 2.3vw, 30px);
+        }
+
+
+        .idea-sub .surprise {
+
+            color: #4E8484;
+
+            font-size:
+                clamp(17px, 1.8vw, 24px);
+
+            font-weight: 700;
+        }
+
+
+        /* =====================================================
+           BOTTOM CAMERA DATA
+        ===================================================== */
+
+        .bottom-data {
+
+            position: absolute;
+
+            bottom: 27px;
+
+            left: 50%;
+
+            transform:
+                translateX(-50%);
+
+            z-index: 5;
+
+            font-family: monospace;
+
+            font-size: 11px;
+
+            letter-spacing: 4px;
+
+            white-space: nowrap;
+
+            opacity: 0.78;
+        }
+
+
+        .bottom-data span {
+
+            margin: 0 12px;
+
+            opacity: 0.55;
+        }
+
+
+        /* =====================================================
+           ENTRANCE ANIMATIONS
+        ===================================================== */
+
+        @keyframes contentIn {
+
+            from {
+
+                opacity: 0;
+
+                transform:
+                    translate(-50%, -46%)
+                    scale(0.97);
+            }
+
+
+            to {
+
+                opacity: 1;
+
+                transform:
+                    translate(-50%, -50%)
+                    scale(1);
+            }
+        }
+
+
+        @keyframes logoIn {
+
+            from {
+
+                opacity: 0;
+
+                transform:
+                    translateX(-50%)
+                    translateY(-10px);
+            }
+
+
+            to {
+
+                opacity: 1;
+
+                transform:
+                    translateX(-50%)
+                    translateY(0);
+            }
+        }
+
+
+        /* =====================================================
+           MOBILE
+        ===================================================== */
+
+        @media (max-width: 700px) {
+
+            .idea-section {
+
+                min-height: 500px;
+            }
+
+
+            .camera-data {
+
+                top: 22px;
+
+                font-size: 8px;
+
+                letter-spacing: 2px;
+            }
+
+
+            .camera-data span {
+
+                margin: 0 5px;
+            }
+
+
+            .language {
+
+                top: 22px;
+
+                left: 18px;
+
+                font-size: 9px;
+
+                letter-spacing: 2px;
+            }
+
+
+            .recording {
+
+                top: 22px;
+
+                right: 18px;
+
+                font-size: 9px;
+
+                gap: 7px;
+            }
+
+
+            .rec-dot {
+
+                width: 8px;
+
+                height: 8px;
+            }
+
+
+            .team-logo {
+
+                top: 62px;
+            }
+
+
+            .team-logo .english {
+
+                font-size: 18px;
+
+                letter-spacing: 3px;
+            }
+
+
+            .team-logo .arabic {
+
+                font-size: 14px;
+            }
+
+
+            .corner {
+
+                width: 35px;
+
+                height: 35px;
+            }
+
+
+            .corner.tl,
+            .corner.tr {
+
+                top: 72px;
+            }
+
+
+            .corner.bl,
+            .corner.br {
+
+                bottom: 52px;
+            }
+
+
+            .corner.tl,
+            .corner.bl {
+
+                left: 18px;
+            }
+
+
+            .corner.tr,
+            .corner.br {
+
+                right: 18px;
+            }
+
+
+            .idea-content {
+
+                width: 88%;
+            }
+
+
+            .idea-main .first-line {
+
+                font-size: 24px;
+            }
+
+
+            .idea-main .second-line {
+
+                font-size: 30px;
+            }
+
+
+            .divider {
+
+                width: 100px;
+
+                margin: 22px auto;
+            }
+
+
+            .idea-sub .wait {
+
+                font-size: 17px;
+            }
+
+
+            .idea-sub .surprise {
+
+                font-size: 15px;
+            }
+
+
+            .bottom-data {
+
+                bottom: 18px;
+
+                font-size: 7px;
+
+                letter-spacing: 2px;
+            }
+
+
+            .bottom-data span {
+
+                margin: 0 5px;
+            }
+
+
+            .plus {
+
+                display: none;
+            }
+        }
+
+
+        /* =====================================================
+           VERY SMALL MOBILE
+        ===================================================== */
+
+        @media (max-width: 380px) {
+
+            .idea-main .first-line {
+
+                font-size: 21px;
+            }
+
+
+            .idea-main .second-line {
+
+                font-size: 27px;
+            }
+
+
+            .idea-sub .wait {
+
+                font-size: 15px;
+            }
+
+
+            .idea-sub .surprise {
+
+                font-size: 14px;
+            }
+        }
+
+
+        /* =====================================================
+           REDUCED MOTION
+        ===================================================== */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            .team-logo,
+            .idea-content {
+
+                animation: none;
+
+                opacity: 1;
+            }
+
+
+            .rec-dot {
+
+                animation: none;
+
+                opacity: 1;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         IDEA
+    ===================================================== -->
+
+    <section class="idea-section">
+
+
+        <div class="camera-ui">
+
+
+            <!-- =============================================
+                 LANGUAGE
+            ============================================== -->
+
+            <div class="language">
+
+                AR
+
+                <span>/</span>
+
+                EN
+
+            </div>
+
+
+            <!-- =============================================
+                 CAMERA DATA
+            ============================================== -->
+
+            <div class="camera-data">
+
+                FRAME 001
+
+                <span>|</span>
+
+                ISO 800
+
+                <span>|</span>
+
+                24 FPS
+
+            </div>
+
+
+            <!-- =============================================
+                 TEAM LOGO
+            ============================================== -->
+
+            <div class="team-logo">
+
+                <span class="english">
+                    ON AIR
+                </span>
+
+                <span class="arabic">
+                    بالعَافِية
+                </span>
+
+            </div>
+
+
+            <!-- =============================================
+                 REC
+            ============================================== -->
+
+            <div class="recording">
+
+                <span class="rec-dot"></span>
+
+                <span>
+                    REC
+                </span>
+
+            </div>
+
+
+            <!-- =============================================
+                 CAMERA CORNERS
+            ============================================== -->
+
+            <div class="corner tl"></div>
+
+            <div class="corner tr"></div>
+
+            <div class="corner bl"></div>
+
+            <div class="corner br"></div>
+
+
+            <!-- =============================================
+                 SIDE MARKERS
+            ============================================== -->
+
+            <div class="plus left">
+                +
+            </div>
+
+            <div class="plus right">
+                +
+            </div>
+
+
+            <!-- =============================================
+                 IDEA TEXT
+            ============================================== -->
+
+            <div class="idea-content">
+
+
+                <div class="idea-main">
+
+
+                    <span class="first-line">
+
+                        إيه ده...
+
+                    </span>
+
+
+                    <span class="second-line">
+
+                       
+                       هو إحنا كنا هنحط هنا الفكرة؟
+                      </span>  
+                    
+                        ياترا ايه الفكرة؟
+                   
+                </span>
+
+
+                </div>
+
+
+                <!-- DIVIDER -->
+
+                <div class="divider"></div>
+
+
+                <!-- SECOND MESSAGE -->
+
+                <div class="idea-sub">
+
+
+                    <span class="wait">
+
+                        انتظرونا... إحنا كده كده مش جايين
+
+                    </span>
+
+
+                    <span class="surprise">
+
+                        بس متأكدين إنكم هتنبهروا بينا
+
+                    </span>
+
+
+                </div>
+
+
+            </div>
+
+
+            <!-- =============================================
+                 BOTTOM DATA
+            ============================================== -->
+
+            <div class="bottom-data">
+
+                FRAME 001
+
+                <span>|</span>
+
+                ISO 800
+
+                <span>|</span>
+
+                24 FPS
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+</body>
+
+</html>

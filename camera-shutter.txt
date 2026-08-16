@@ -1,0 +1,5 @@
+Placeholder: add a camera-shutter.wav audio file here.
+
+Browsers expect a valid WAV/MP3 binary. To enable the site audio feature, replace this file with a real WAV named "camera-shutter.wav" at the site root, or update header.js to point to a different audio file.
+
+If you want, I can add a small generated silent audio fallback via JS instead of a static file.
