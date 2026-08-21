@@ -548,24 +548,19 @@ function showProductionNotification(
 }
 
 
+
 /* =====================================================
    PRODUCTION SCROLL REVEAL
 ===================================================== */
 
 function initProductionReveal() {
 
-    const elements =
-        document.querySelectorAll(
-            [
-                ".production-day",
-                ".deliverable-item",
-                ".production-status",
-                ".production-footer"
-            ].join(",")
+    const section =
+        document.querySelector(
+            "#productionSection"
         );
 
-
-    if (!elements.length) {
+    if (!section) {
         return;
     }
 
@@ -580,16 +575,15 @@ function initProductionReveal() {
         ).matches
     ) {
 
-        elements.forEach(element => {
+        section.classList.remove(
+            "production-scroll-hidden"
+        );
 
-            element.classList.add(
-                "production-visible"
-            );
-
-        });
+        section.classList.add(
+            "production-visible"
+        );
 
         return;
-
     }
 
 
@@ -606,50 +600,42 @@ function initProductionReveal() {
                     if (
                         !entry.isIntersecting
                     ) {
-
                         return;
-
                     }
 
 
-                    entry.target.classList.add(
+                    section.classList.remove(
+                        "production-scroll-hidden"
+                    );
+
+                    section.classList.add(
                         "production-visible"
                     );
 
 
                     observer.unobserve(
-                        entry.target
+                        section
                     );
 
                 });
 
             },
             {
-                threshold: 0.08,
+                threshold: 0.12,
+
                 rootMargin:
-                    "0px 0px -6% 0px"
+                    "0px 0px -40px 0px"
             }
         );
 
 
-    elements.forEach(element => {
-
-        element.classList.add(
-            "production-reveal"
-        );
-
-
-        observer.observe(
-            element
-        );
-
-    });
+    observer.observe(section);
 
 }
 
 
 /* =====================================================
-   INITIALIZE REVEAL
+   INITIALIZE
 ===================================================== */
 
 document.addEventListener(

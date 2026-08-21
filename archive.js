@@ -968,8 +968,9 @@ document.addEventListener(
 console.log(
     "ON AIR — Archive JS loaded successfully."
 );
+
 /* =====================================================
-   PRODUCTION DAYS ARCHIVE
+   ON AIR — CINEMATIC PRODUCTION DIARY
 ===================================================== */
 
 const productionDays = [
@@ -1101,14 +1102,16 @@ const productionDays = [
 ];
 
 
-/* =====================================================
-   RENDER DAYS
-===================================================== */
+/* =========================================================
+   RENDER CINEMATIC DAYS
+========================================================= */
 
 function renderProductionDays() {
 
     const grid =
-        document.getElementById("productionDaysGrid");
+        document.getElementById(
+            "productionDaysGrid"
+        );
 
     if (!grid) return;
 
@@ -1116,172 +1119,274 @@ function renderProductionDays() {
     grid.innerHTML = "";
 
 
-    productionDays.forEach(function (day) {
+    productionDays.forEach(
+        function(day, index) {
 
-        const card =
-            document.createElement("article");
-
-
-        card.className =
-            "production-day-card " +
-            (day.status === "locked"
-                ? "locked"
-                : "");
+            const card =
+                document.createElement(
+                    "article"
+                );
 
 
-        /* =================================================
-           LOCKED CARD
-        ================================================= */
-
-        if (day.status === "locked") {
-
-            card.innerHTML = `
-
-                <div class="day-card-top">
-
-                    <span class="day-status">
-                        LOCKED
-                    </span>
-
-                    <span class="day-number">
-                        ${day.number}
-                    </span>
-
-                </div>
+            card.className =
+                "production-day-card " +
+                (
+                    day.status === "locked"
+                        ? "locked"
+                        : ""
+                );
 
 
-                <h3 class="day-title">
-                    ${day.title}
-                </h3>
+            card.dataset.day =
+                day.number;
 
 
-                <div class="locked-content">
+            /* =================================================
+               LOCKED DAY
+            ================================================= */
 
-                    <div class="lock-icon">
-                        🔒
+            if (
+                day.status === "locked"
+            ) {
+
+                card.innerHTML = `
+
+                    <div class="day-card-top">
+
+                        <span class="day-status">
+                            LOCKED
+                        </span>
+
+                        <span class="day-number">
+                            DAY ${day.number}
+                        </span>
+
                     </div>
 
-                    <span>
-                        قريبًا
-                    </span>
 
-                </div>
+                    <h3 class="day-title">
+                        ${day.title}
+                    </h3>
 
-            `;
+
+                    <div class="locked-content">
+
+                        <div class="lock-icon">
+                            🔒
+                        </div>
+
+                        <span>
+                            قريبًا
+                        </span>
+
+                    </div>
+
+                `;
+
+            }
+
+            
+
+            /* =================================================
+               OPEN DAY
+            ================================================= */
+
+            else {
+
+                /*
+                 * الصورة الأساسية:
+                 * بنستخدم أول صورة موجودة بالفعل
+                 * من غير إضافة صور جديدة.
+                 */
+                const mainImage =
+                    day.images &&
+                    day.images.length
+                        ? day.images[0]
+                        : "";
+
+
+                card.innerHTML = `
+
+                    <div class="day-card-top">
+
+                        <span class="day-status">
+                            DAY ${day.number}
+                        </span>
+
+                        <span class="day-number">
+                            ${day.number}
+                        </span>
+
+                        <div class="day-date">
+
+                            <span class="day-date-icon">
+                                ▣
+                            </span>
+
+                            <span>
+                                ${day.date}
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <h3 class="day-title">
+                        ${day.title}
+                    </h3>
+
+
+                    <div class="day-images">
+
+                        <div class="day-image-wrapper">
+
+                            <img
+                                class="day-image"
+                                src="${mainImage}"
+                                alt="${day.title}"
+                                loading="lazy"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <p class="day-description">
+                        ${day.description}
+                    </p>
+
+
+                    <ul class="day-events">
+
+                        ${
+                            day.events
+                                .map(
+                                    event =>
+                                        `<li>${event}</li>`
+                                )
+                                .join("")
+                        }
+
+                    </ul>
+
+                `;
+
+            }
+
+
+            grid.appendChild(card);
 
         }
+    );
 
 
-        /* =================================================
-           OPEN CARD
-        ================================================= */
-
-        else {
-
-            const eventsHTML =
-                day.events
-                    .map(function (event) {
-
-                        return `
-                            <li>${event}</li>
-                        `;
-
-                    })
-                    .join("");
-
-
-            const imagesHTML =
-                day.images
-                    .map(function (image) {
-
-                        return `
-                            <div class="day-image-wrapper">
-
-                                <img
-                                    class="day-image"
-                                    src="${image}"
-                                    alt="${day.title}"
-                                    loading="lazy"
-                                >
-
-                            </div>
-                        `;
-
-                    })
-                    .join("");
-
-
-            card.innerHTML = `
-
-                <div class="day-card-top">
-
-                    <span class="day-status">
-                        OPEN
-                    </span>
-
-                    <span class="day-number">
-                        ${day.number}
-                    </span>
-
-                </div>
-
-
-                <h3 class="day-title">
-                    ${day.title}
-                </h3>
-
-
-                <div class="day-images">
-
-                    ${imagesHTML}
-
-                </div>
-
-
-                <p class="day-description">
-                    ${day.description}
-                </p>
-
-
-                <ul class="day-events">
-
-                    ${eventsHTML}
-
-                </ul>
-
-
-                <div class="day-date">
-
-                    <span class="day-date-icon">
-                        ▣
-                    </span>
-
-                    <span>
-                        ${day.date}
-                    </span>
-
-                </div>
-
-            `;
-
-        }
-
-
-        grid.appendChild(card);
-
-    });
+    initProductionDayReveal();
 
 }
 
 
-/* =====================================================
+/* =========================================================
+   CINEMATIC SCROLL REVEAL
+========================================================= */
+
+function initProductionDayReveal() {
+
+    const cards =
+        document.querySelectorAll(
+            ".production-day-card"
+        );
+
+
+    if (!cards.length) return;
+
+
+    /*
+     * Reduced motion
+     */
+    if (
+        window.matchMedia(
+            "(prefers-reduced-motion: reduce)"
+        ).matches
+    ) {
+
+        cards.forEach(
+            card => {
+
+                card.classList.add(
+                    "is-visible"
+                );
+
+            }
+        );
+
+        return;
+    }
+
+
+    const observer =
+        new IntersectionObserver(
+            function(entries) {
+
+                entries.forEach(
+                    function(entry) {
+
+                        if (
+                            !entry.isIntersecting
+                        ) {
+                            return;
+                        }
+
+
+                        entry.target.classList.add(
+                            "is-visible"
+                        );
+
+
+                        observer.unobserve(
+                            entry.target
+                        );
+
+                    }
+                );
+
+            },
+            {
+                threshold: 0.22,
+
+                rootMargin:
+                    "0px 0px -12% 0px"
+            }
+        );
+
+
+    cards.forEach(
+        card => {
+
+            observer.observe(
+                card
+            );
+
+        }
+    );
+
+}
+
+
+/* =========================================================
    INITIALIZE
-===================================================== */
+========================================================= */
 
 document.addEventListener(
     "DOMContentLoaded",
-    renderProductionDays
+    function() {
+
+        renderProductionDays();
+
+    }
 );
+
 /* =====================================================
    ON AIR — CREW
 ===================================================== */

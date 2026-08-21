@@ -3786,1090 +3786,7 @@ body.page-loaded .archive-content {
         0;
 
 } 
-/* =====================================================
-   PRODUCTION DAYS ARCHIVE
-===================================================== */
 
-.production-days-section {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 120px 40px 140px;
-    box-sizing: border-box;
-}
-
-
-/* =====================================================
-   SECTION HEADER
-===================================================== */
-
-.production-days-heading {
-    text-align: right;
-    margin-bottom: 70px;
-}
-
-.production-days-heading .section-kicker {
-    display: block;
-
-    font-family: monospace;
-    font-size: 11px;
-
-    letter-spacing: 2px;
-
-    color: #6fa5a1;
-
-    margin-bottom: 25px;
-}
-
-
-.production-days-heading h2 {
-    margin: 0;
-
-    color: #eadbc2;
-
-    font-size: clamp(42px, 6vw, 78px);
-
-    font-weight: 400;
-
-    line-height: 1.15;
-}
-
-
-.production-days-heading p {
-    margin-top: 22px;
-
-    color: rgba(234, 219, 194, 0.45);
-
-    font-size: 14px;
-
-    letter-spacing: 4px;
-}
-
-
-/* =====================================================
-   GRID
-===================================================== */
-
-.production-days-grid {
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(3, minmax(0, 1fr));
-
-    gap: 20px;
-
-}
-
-
-/* =====================================================
-   DAY CARD
-===================================================== */
-
-.production-day-card {
-
-    position: relative;
-
-    min-height: 420px;
-
-    border: 1px solid rgba(234, 219, 194, 0.13);
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(255,255,255,0.015),
-            rgba(0,0,0,0.12)
-        );
-
-    padding: 28px;
-
-    box-sizing: border-box;
-
-    transition:
-        border-color 0.35s ease,
-        transform 0.35s ease,
-        box-shadow 0.35s ease;
-
-    overflow: hidden;
-}
-
-
-.production-day-card:hover {
-
-    transform: translateY(-5px);
-
-    border-color:
-        rgba(111, 165, 161, 0.55);
-
-    box-shadow:
-        0 15px 50px rgba(0,0,0,0.25);
-
-}
-
-
-/* =====================================================
-   CARD TOP
-===================================================== */
-
-.day-card-top {
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    padding-bottom: 22px;
-
-    border-bottom:
-        1px solid rgba(234, 219, 194, 0.10);
-
-    margin-bottom: 28px;
-}
-
-
-.day-status {
-
-    font-family: monospace;
-
-    font-size: 10px;
-
-    letter-spacing: 2px;
-
-    color: #6fa5a1;
-}
-
-
-.day-number {
-
-    font-family: monospace;
-
-    font-size: 18px;
-
-    color: rgba(111, 165, 161, 0.55);
-}
-
-
-/* =====================================================
-   DAY TITLE
-===================================================== */
-
-.day-title {
-
-    font-size: 30px;
-
-    font-weight: 400;
-
-    color: #eadbc2;
-
-    margin: 0 0 20px;
-
-}
-
-
-/* =====================================================
-   IMAGE
-===================================================== */
-
-.day-image-wrapper {
-
-    width: 100%;
-
-    aspect-ratio: 16 / 10;
-
-    overflow: hidden;
-
-    margin-bottom: 22px;
-
-    border: 1px solid
-        rgba(234, 219, 194, 0.18);
-
-}
-
-
-.day-image {
-
-    width: 100%;
-
-    height: 100%;
-
-    object-fit: cover;
-
-    display: block;
-
-    transition:
-        transform 0.6s ease,
-        filter 0.6s ease;
-}
-
-
-.production-day-card:hover .day-image {
-
-    transform: scale(1.05);
-
-}
-
-
-/* =====================================================
-   DESCRIPTION
-===================================================== */
-
-.day-description {
-
-    color:
-        rgba(234, 219, 194, 0.65);
-
-    font-size: 14px;
-
-    line-height: 2;
-
-    margin: 0 0 25px;
-}
-
-
-/* =====================================================
-   DATE
-===================================================== */
-
-.day-date {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 10px;
-
-    padding-top: 18px;
-
-    border-top:
-        1px solid rgba(234, 219, 194, 0.08);
-
-    color: #eadbc2;
-
-    font-family: monospace;
-
-    font-size: 12px;
-
-    letter-spacing: 1px;
-}
-
-
-.day-date-icon {
-
-    color: #6fa5a1;
-
-    font-size: 15px;
-}
-
-
-/* =====================================================
-   EVENTS
-===================================================== */
-
-.day-events {
-
-    margin: 0;
-
-    padding: 0;
-
-    list-style: none;
-}
-
-
-.day-events li {
-
-    position: relative;
-
-    padding-right: 16px;
-
-    margin-bottom: 8px;
-
-    color:
-        rgba(234, 219, 194, 0.65);
-
-    font-size: 13px;
-
-    line-height: 1.8;
-}
-
-
-.day-events li::before {
-
-    content: "—";
-
-    position: absolute;
-
-    right: 0;
-
-    color: #6fa5a1;
-}
-
-
-/* =====================================================
-   LOCKED CARD
-===================================================== */
-
-.production-day-card.locked {
-
-    opacity: 0.45;
-
-    cursor: default;
-}
-
-
-.production-day-card.locked:hover {
-
-    transform: none;
-
-    border-color:
-        rgba(234, 219, 194, 0.13);
-
-    box-shadow: none;
-}
-
-
-.production-day-card.locked .day-image-wrapper {
-
-    display: none;
-}
-
-
-.locked-content {
-
-    height: 260px;
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-
-    justify-content: center;
-
-    text-align: center;
-}
-
-
-.lock-icon {
-
-    font-size: 22px;
-
-    margin-bottom: 25px;
-
-    color: #c3a75d;
-}
-
-
-.locked-content span {
-
-    font-family: monospace;
-
-    font-size: 11px;
-
-    letter-spacing: 3px;
-
-    color: rgba(234, 219, 194, 0.5);
-}
-
-
-/* =====================================================
-   RESPONSIVE
-===================================================== */
-
-@media (max-width: 900px) {
-
-    .production-days-section {
-
-        padding:
-            90px 25px 100px;
-
-    }
-
-    .production-days-grid {
-
-        grid-template-columns:
-            repeat(2, minmax(0, 1fr));
-
-    }
-
-}
-
-
-@media (max-width: 600px) {
-
-    .production-days-section {
-
-        padding:
-            70px 18px 90px;
-
-    }
-
-
-    .production-days-heading {
-
-        margin-bottom: 45px;
-
-    }
-
-
-    .production-days-heading h2 {
-
-        font-size: 38px;
-
-        line-height: 1.35;
-
-    }
-
-
-    .production-days-heading p {
-
-        font-size: 11px;
-
-        letter-spacing: 3px;
-
-    }
-
-
-    .production-days-grid {
-
-        grid-template-columns: 1fr;
-
-        gap: 15px;
-
-    }
-
-
-    .production-day-card {
-
-        min-height: auto;
-
-        padding: 22px;
-
-    }
-
-
-    .day-title {
-
-        font-size: 27px;
-
-    }
-
-}/* =====================================================
-   PRODUCTION DAYS — CINEMATIC ARCHIVE
-===================================================== */
-
-.production-days-section {
-    position: relative;
-    width: 100%;
-    padding: 140px 6vw 160px;
-    overflow: hidden;
-}
-
-
-/* -----------------------------------------------------
-   SECTION ATMOSPHERE
------------------------------------------------------ */
-
-.production-days-section::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-
-    background:
-        radial-gradient(
-            circle at 50% 20%,
-            rgba(180, 150, 80, 0.08),
-            transparent 42%
-        );
-
-    pointer-events: none;
-}
-
-
-/* -----------------------------------------------------
-   HEADER
------------------------------------------------------ */
-
-.production-header {
-    position: relative;
-    z-index: 2;
-
-    max-width: 900px;
-    margin: 0 auto 70px;
-
-    text-align: center;
-}
-
-
-.production-header::before {
-    content: "PRODUCTION ARCHIVE";
-
-    display: block;
-
-    margin-bottom: 18px;
-
-    font-size: 10px;
-    letter-spacing: 0.35em;
-
-    opacity: 0.55;
-}
-
-
-.production-header h2 {
-    margin: 0;
-
-    font-size: clamp(42px, 6vw, 82px);
-    font-weight: 500;
-
-    letter-spacing: -0.04em;
-
-    line-height: 0.95;
-}
-
-
-.production-header p {
-    max-width: 600px;
-
-    margin: 25px auto 0;
-
-    font-size: 14px;
-    line-height: 2;
-
-    opacity: 0.6;
-}
-
-
-/* -----------------------------------------------------
-   GRID
------------------------------------------------------ */
-
-#productionDaysGrid {
-    position: relative;
-    z-index: 2;
-
-    width: min(1400px, 100%);
-    margin: 0 auto;
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(3, minmax(0, 1fr));
-
-    gap: 28px;
-}
-
-
-/* -----------------------------------------------------
-   DAY CARD
------------------------------------------------------ */
-
-.production-day-card {
-    position: relative;
-
-    min-height: 580px;
-
-    padding: 30px;
-
-    display: flex;
-    flex-direction: column;
-
-    overflow: hidden;
-
-    border: 1px solid rgba(255,255,255,0.12);
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(255,255,255,0.055),
-            rgba(255,255,255,0.015)
-        );
-
-    backdrop-filter: blur(12px);
-
-    transition:
-        transform 0.6s cubic-bezier(.2,.8,.2,1),
-        border-color 0.5s ease,
-        box-shadow 0.5s ease;
-}
-
-
-.production-day-card::before {
-    content: "";
-
-    position: absolute;
-    inset: 0;
-
-    background:
-        linear-gradient(
-            135deg,
-            transparent 40%,
-            rgba(255,255,255,0.035),
-            transparent 70%
-        );
-
-    transform: translateX(-100%);
-
-    transition: transform 0.9s ease;
-
-    pointer-events: none;
-}
-
-
-.production-day-card:hover::before {
-    transform: translateX(100%);
-}
-
-
-.production-day-card:hover {
-    transform: translateY(-10px);
-
-    border-color: rgba(190,160,90,0.45);
-
-    box-shadow:
-        0 30px 80px rgba(0,0,0,0.35);
-}
-
-
-/* -----------------------------------------------------
-   TOP
------------------------------------------------------ */
-
-.day-card-top {
-    position: relative;
-    z-index: 2;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    margin-bottom: 24px;
-}
-
-
-.day-status {
-    font-size: 9px;
-    letter-spacing: 0.25em;
-
-    opacity: 0.5;
-}
-
-
-.day-number {
-    font-family: monospace;
-
-    font-size: 13px;
-
-    opacity: 0.4;
-}
-
-
-/* -----------------------------------------------------
-   TITLE
------------------------------------------------------ */
-
-.day-title {
-    position: relative;
-    z-index: 2;
-
-    margin: 0 0 25px;
-
-    font-size: clamp(25px, 2.5vw, 36px);
-
-    font-weight: 500;
-
-    letter-spacing: -0.03em;
-}
-
-
-/* -----------------------------------------------------
-   IMAGES
------------------------------------------------------ */
-
-.day-images {
-    position: relative;
-    z-index: 2;
-
-    width: 100%;
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(2, minmax(0, 1fr));
-
-    gap: 8px;
-
-    margin-bottom: 25px;
-}
-
-
-.day-image-wrapper {
-    position: relative;
-
-    aspect-ratio: 4 / 3;
-
-    overflow: hidden;
-
-    background: #111;
-}
-
-
-.day-image {
-    width: 100%;
-    height: 100%;
-
-    display: block;
-
-    object-fit: cover;
-
-    filter:
-        grayscale(15%)
-        contrast(1.05)
-        brightness(0.82);
-
-    transition:
-        transform 0.8s cubic-bezier(.2,.8,.2,1),
-        filter 0.6s ease;
-}
-
-
-.production-day-card:hover .day-image {
-    transform: scale(1.06);
-
-    filter:
-        grayscale(0%)
-        contrast(1.08)
-        brightness(0.95);
-}
-
-
-/* -----------------------------------------------------
-   SINGLE IMAGE
------------------------------------------------------ */
-
-.day-images:has(.day-image-wrapper:only-child) {
-    grid-template-columns: 1fr;
-}
-
-
-.day-images:has(.day-image-wrapper:only-child)
-.day-image-wrapper {
-    aspect-ratio: 16 / 9;
-}
-
-
-/* -----------------------------------------------------
-   DESCRIPTION
------------------------------------------------------ */
-
-.day-description {
-    position: relative;
-    z-index: 2;
-
-    margin: 0 0 25px;
-
-    font-size: 13px;
-
-    line-height: 1.9;
-
-    opacity: 0.65;
-}
-
-
-/* -----------------------------------------------------
-   EVENTS
------------------------------------------------------ */
-
-.day-events {
-    position: relative;
-    z-index: 2;
-
-    margin: 0;
-    padding: 0;
-
-    list-style: none;
-
-    display: flex;
-    flex-direction: column;
-
-    gap: 10px;
-}
-
-
-.day-events li {
-    position: relative;
-
-    padding-right: 18px;
-
-    font-size: 12px;
-
-    opacity: 0.7;
-}
-
-
-.day-events li::before {
-    content: "";
-
-    position: absolute;
-
-    right: 0;
-    top: 8px;
-
-    width: 5px;
-    height: 5px;
-
-    border-radius: 50%;
-
-    background: currentColor;
-
-    opacity: 0.5;
-}
-
-
-/* -----------------------------------------------------
-   DATE
------------------------------------------------------ */
-
-.day-date {
-    position: relative;
-    z-index: 2;
-
-    display: flex;
-    align-items: center;
-
-    gap: 8px;
-
-    margin-top: auto;
-    padding-top: 30px;
-
-    font-size: 10px;
-
-    letter-spacing: 0.08em;
-
-    opacity: 0.45;
-}
-
-
-.day-date-icon {
-    font-size: 12px;
-}
-
-
-/* -----------------------------------------------------
-   LOCKED
------------------------------------------------------ */
-
-.production-day-card.locked {
-    min-height: 420px;
-
-    justify-content: space-between;
-
-    opacity: 0.45;
-}
-
-
-.production-day-card.locked:hover {
-    transform: none;
-
-    border-color:
-        rgba(255,255,255,0.12);
-
-    box-shadow: none;
-}
-
-
-.locked-content {
-    flex: 1;
-
-    display: flex;
-    flex-direction: column;
-
-    align-items: center;
-    justify-content: center;
-
-    gap: 15px;
-
-    font-size: 11px;
-
-    letter-spacing: 0.15em;
-
-    opacity: 0.5;
-}
-
-
-.lock-icon {
-    font-size: 24px;
-
-    filter: grayscale(1);
-}
-
-
-/* -----------------------------------------------------
-   CINEMATIC REVEAL
------------------------------------------------------ */
-
-.production-day-card {
-    opacity: 0;
-
-    transform:
-        translateY(45px)
-        scale(0.98);
-
-    animation:
-        productionCardReveal
-        1s cubic-bezier(.2,.8,.2,1)
-        forwards;
-}
-
-
-.production-day-card:nth-child(1) {
-    animation-delay: 0.1s;
-}
-
-
-.production-day-card:nth-child(2) {
-    animation-delay: 0.22s;
-}
-
-
-.production-day-card:nth-child(3) {
-    animation-delay: 0.34s;
-}
-
-
-.production-day-card:nth-child(4) {
-    animation-delay: 0.46s;
-}
-
-
-.production-day-card:nth-child(5) {
-    animation-delay: 0.58s;
-}
-
-
-.production-day-card:nth-child(6) {
-    animation-delay: 0.7s;
-}
-
-
-@keyframes productionCardReveal {
-
-    to {
-        opacity: 1;
-
-        transform:
-            translateY(0)
-            scale(1);
-    }
-
-}
-
-
-/* -----------------------------------------------------
-   MOBILE
------------------------------------------------------ */
-
-@media (max-width: 900px) {
-
-    .production-days-section {
-        padding:
-            100px 22px
-            120px;
-    }
-
-
-    #productionDaysGrid {
-        grid-template-columns: 1fr;
-
-        max-width: 600px;
-    }
-
-
-    .production-day-card {
-        min-height: auto;
-
-        padding: 24px;
-    }
-
-}
-
-
-@media (max-width: 520px) {
-
-    .production-days-section {
-        padding:
-            80px 16px
-            100px;
-    }
-
-
-    .production-header {
-        margin-bottom: 45px;
-    }
-
-
-    .production-header h2 {
-        font-size: 42px;
-    }
-
-
-    .production-header p {
-        font-size: 12px;
-    }
-
-
-    .production-day-card {
-        padding: 20px;
-
-        border-radius: 0;
-    }
-
-
-    .day-title {
-        font-size: 28px;
-    }
-
-
-    .day-images {
-        grid-template-columns: 1fr 1fr;
-
-        gap: 5px;
-    }
-
-
-    .day-description {
-        font-size: 12px;
-    }
-
-}
-
-
-/* -----------------------------------------------------
-   REDUCED MOTION
------------------------------------------------------ */
-
-@media (prefers-reduced-motion: reduce) {
-
-    .production-day-card {
-        animation: none;
-
-        opacity: 1;
-
-        transform: none;
-
-        transition: none;
-    }
-
-
-    .production-day-card:hover {
-        transform: none;
-    }
-
-
-    .day-image {
-        transition: none;
-    }
-
-}
 /* =====================================================
    ON AIR — CREW SECTION
 ===================================================== */
@@ -5878,5 +4795,804 @@ select,
     textarea,
     select {
         cursor: auto;
+    }
+}
+/* =========================================================
+   ON AIR — PRODUCTION DIARY
+   VERTICAL CINEMATIC TIMELINE
+========================================================= */
+
+.production-days-section {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding: 120px 6vw 150px;
+    background: #050C14;
+    isolation: isolate;
+}
+
+/* cinematic background */
+.production-days-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            circle at 50% 35%,
+            rgba(17, 37, 72, .28),
+            transparent 48%
+        ),
+        linear-gradient(
+            90deg,
+            rgba(78,180,132,.018) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            rgba(78,180,132,.018) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        auto,
+        42px 42px,
+        42px 42px;
+
+    z-index: -2;
+}
+
+.production-days-section::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            transparent 30%,
+            rgba(0,0,0,.65) 100%
+        );
+
+    z-index: -1;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.production-days-heading {
+    position: relative;
+    width: min(1180px, 100%);
+    margin: 0 auto 100px;
+    z-index: 5;
+
+    direction: ltr;
+    text-align: left;
+}
+
+.production-days-heading .section-kicker {
+    display: block;
+    margin-bottom: 16px;
+
+    color: #4EB484;
+
+    font-family: "Space Mono", monospace;
+    font-size: 9px;
+    letter-spacing: .18em;
+}
+
+.production-days-heading h2 {
+    margin: 0;
+
+    color: #F7EDE3;
+
+    font-family:
+        "Tajawal",
+        "Cairo",
+        sans-serif;
+
+    font-size: clamp(42px, 6vw, 76px);
+    font-weight: 800;
+    line-height: .95;
+    letter-spacing: -.04em;
+}
+
+.production-days-heading p {
+    width: 430px;
+    max-width: 100%;
+    margin-top: 20px;
+
+    color: rgba(225,215,204,.55);
+
+    font-family: "Cairo", sans-serif;
+    font-size: 11px;
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   TIMELINE
+========================================================= */
+
+.production-days-grid {
+
+    position: relative;
+
+    width: min(1120px, 100%);
+    margin: 0 auto;
+
+    /* IMPORTANT:
+       one column only
+    */
+    display: flex !important;
+    flex-direction: column !important;
+
+    gap: 0 !important;
+
+    grid-template-columns: none !important;
+}
+
+
+/* central vertical line */
+
+.production-days-grid::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    bottom: 0;
+
+    left: 50%;
+
+    width: 1px;
+
+    transform: translateX(-50%);
+
+    background:
+        linear-gradient(
+            to bottom,
+            transparent,
+            rgba(78,180,132,.35) 5%,
+            rgba(78,180,132,.18) 50%,
+            rgba(78,180,132,.35) 95%,
+            transparent
+        );
+
+    z-index: 2;
+}
+
+
+/* =========================================================
+   EACH DAY
+========================================================= */
+
+.production-day-card {
+
+    position: relative;
+
+    width: 100% !important;
+
+    height: 570px !important;
+    min-height: 570px !important;
+
+    flex: 0 0 570px !important;
+
+    display: block !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    opacity: 0;
+
+    transform: translateY(70px);
+
+    filter: blur(4px);
+
+    transition:
+        opacity 1s cubic-bezier(.16,1,.3,1),
+        transform 1s cubic-bezier(.16,1,.3,1),
+        filter 1s cubic-bezier(.16,1,.3,1);
+
+    overflow: visible !important;
+}
+
+.production-day-card.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+}
+
+
+/* =========================================================
+   CENTER POINT
+========================================================= */
+
+.production-day-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 8px;
+    height: 8px;
+
+    transform: translate(-50%, -50%);
+
+    border: 1px solid #F7EDE3;
+
+    border-radius: 50%;
+
+    background: #112548;
+
+    box-shadow:
+        0 0 0 4px #050C14,
+        0 0 0 5px rgba(78,180,132,.28),
+        0 0 18px rgba(78,180,132,.25);
+
+    z-index: 20;
+}
+
+
+/* =========================================================
+   DAY INFORMATION
+========================================================= */
+
+.production-day-card .day-card-top {
+
+    position: absolute !important;
+
+    top: 50% !important;
+
+    width: 280px !important;
+
+    padding: 0 !important;
+
+    margin: 0 !important;
+
+    transform: translateY(-50%);
+
+    display: flex !important;
+
+    flex-direction: column !important;
+
+    gap: 5px;
+
+    z-index: 10;
+}
+
+
+/* DAY 01 / 03 / 05
+   INFORMATION LEFT */
+
+.production-day-card:nth-child(odd) .day-card-top {
+
+    right: calc(50% + 55px) !important;
+    left: auto !important;
+
+    align-items: flex-end;
+
+    text-align: right;
+}
+
+
+/* DAY 02 / 04 / 06
+   INFORMATION RIGHT */
+
+.production-day-card:nth-child(even) .day-card-top {
+
+    left: calc(50% + 55px) !important;
+    right: auto !important;
+
+    align-items: flex-start;
+
+    text-align: left;
+}
+
+
+/* =========================================================
+   DAY NUMBER
+========================================================= */
+
+.production-day-card .day-number {
+
+    color: rgba(247,237,227,.20);
+
+    font-family:
+        "Space Mono",
+        monospace;
+
+    font-size: 58px;
+
+    font-weight: 700;
+
+    line-height: .9;
+
+    letter-spacing: -.08em;
+}
+
+.production-day-card.is-visible .day-number {
+    color: rgba(247,237,227,.30);
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.production-day-card .day-status {
+
+    color: #4EB484;
+
+    font-family:
+        "Space Mono",
+        monospace;
+
+    font-size: 8px;
+
+    letter-spacing: .18em;
+}
+
+
+/* =========================================================
+   DATE
+========================================================= */
+
+.production-day-card .day-date {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    color: #E1D7CC;
+
+    font-family:
+        "Space Mono",
+        monospace;
+
+    font-size: 9px;
+
+    letter-spacing: .08em;
+}
+
+
+/* =========================================================
+   IMAGE
+========================================================= */
+
+.production-day-card .day-images {
+
+    position: absolute !important;
+
+    top: 50% !important;
+
+    width: 420px !important;
+
+    padding: 12px !important;
+
+    margin: 0 !important;
+
+    transform: translateY(-50%);
+
+    background:
+        rgba(17,37,72,.20);
+
+    border:
+        1px solid
+        rgba(225,215,204,.14);
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,.45);
+
+    z-index: 10;
+
+    transition:
+        transform .8s cubic-bezier(.16,1,.3,1),
+        border-color .5s ease;
+}
+
+
+/* DAY 01 / 03
+   IMAGE RIGHT */
+
+.production-day-card:nth-child(odd) .day-images {
+
+    left: calc(50% + 35px) !important;
+    right: auto !important;
+}
+
+
+/* DAY 02 / 04
+   IMAGE LEFT */
+
+.production-day-card:nth-child(even) .day-images {
+
+    right: calc(50% + 35px) !important;
+    left: auto !important;
+}
+
+
+/* =========================================================
+   IMAGE FRAME
+========================================================= */
+
+.production-day-card .day-image-wrapper {
+
+    position: relative;
+
+    width: 100%;
+
+    aspect-ratio: 16 / 10;
+
+    overflow: hidden;
+
+    background: #07111D;
+}
+
+.production-day-card .day-image {
+
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    filter:
+        saturate(.78)
+        contrast(1.05)
+        brightness(.78);
+
+    transform: scale(1.06);
+
+    transition:
+        transform 1.4s cubic-bezier(.16,1,.3,1),
+        filter .8s ease;
+}
+
+.production-day-card.is-visible .day-image {
+    transform: scale(1);
+}
+
+.production-day-card:hover .day-image {
+    transform: scale(1.04);
+
+    filter:
+        saturate(.92)
+        contrast(1.08)
+        brightness(.86);
+}
+
+
+/* little frame label */
+
+.production-day-card .day-images::before {
+
+    content: "ON AIR / FRAME";
+
+    position: absolute;
+
+    top: 18px;
+    left: 18px;
+
+    z-index: 15;
+
+    padding: 4px 7px;
+
+    color: rgba(247,237,227,.75);
+
+    background: rgba(5,12,20,.75);
+
+    border:
+        1px solid
+        rgba(247,237,227,.15);
+
+    font-family:
+        "Space Mono",
+        monospace;
+
+    font-size: 6px;
+
+    letter-spacing: .12em;
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.production-day-card .day-title {
+
+    position: absolute !important;
+
+    top: calc(50% + 125px) !important;
+
+    width: 300px !important;
+
+    margin: 0 !important;
+
+    color: #F7EDE3;
+
+    font-family:
+        "Tajawal",
+        "Cairo",
+        sans-serif;
+
+    font-size: 18px;
+
+    font-weight: 700;
+
+    line-height: 1.4;
+
+    z-index: 12;
+}
+
+
+/* LEFT INFORMATION */
+
+.production-day-card:nth-child(odd) .day-title {
+
+    right: calc(50% + 55px) !important;
+    left: auto !important;
+
+    text-align: right;
+}
+
+
+/* RIGHT INFORMATION */
+
+.production-day-card:nth-child(even) .day-title {
+
+    left: calc(50% + 55px) !important;
+    right: auto !important;
+
+    text-align: left;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.production-day-card .day-description {
+
+    position: absolute !important;
+
+    top: calc(50% + 165px) !important;
+
+    width: 300px !important;
+
+    margin: 0 !important;
+
+    color:
+        rgba(225,215,204,.48);
+
+    font-family:
+        "Cairo",
+        sans-serif;
+
+    font-size: 9px;
+
+    line-height: 1.9;
+
+    z-index: 12;
+}
+
+
+.production-day-card:nth-child(odd) .day-description {
+
+    right: calc(50% + 55px) !important;
+    left: auto !important;
+
+    text-align: right;
+}
+
+
+.production-day-card:nth-child(even) .day-description {
+
+    left: calc(50% + 55px) !important;
+    right: auto !important;
+
+    text-align: left;
+}
+
+
+/* =========================================================
+   EVENTS HIDDEN
+========================================================= */
+
+.production-day-card .day-events {
+    display: none !important;
+}
+
+
+/* =========================================================
+   UPCOMING DAY
+========================================================= */
+
+.production-day-card.locked {
+
+    height: 420px !important;
+    min-height: 420px !important;
+
+    flex-basis: 420px !important;
+
+    opacity: .45;
+}
+
+
+.production-day-card.locked .locked-content {
+
+    position: absolute;
+
+    top: 50%;
+    left: calc(50% + 55px);
+
+    transform: translateY(-50%);
+
+    width: 280px;
+
+    padding: 35px 20px;
+
+    border:
+        1px solid
+        rgba(225,215,204,.10);
+
+    background:
+        rgba(17,37,72,.08);
+
+    color:
+        rgba(225,215,204,.4);
+
+    text-align: center;
+
+    font-family:
+        "Space Mono",
+        monospace;
+
+    font-size: 8px;
+
+    letter-spacing: .15em;
+}
+
+
+/* =========================================================
+   CONTINUED
+========================================================= */
+
+.production-days-grid::after {
+
+    content: "—  TO BE CONTINUED  —";
+
+    display: block;
+
+    margin: 35px auto 0;
+
+    color:
+        rgba(225,215,204,.3);
+
+    font-family:
+        "Space Mono",
+        monospace;
+
+    font-size: 7px;
+
+    letter-spacing: .18em;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 800px) {
+
+    .production-days-section {
+        padding: 80px 18px 100px;
+    }
+
+    .production-days-heading {
+        margin-bottom: 70px;
+    }
+
+    .production-days-heading h2 {
+        font-size: 42px;
+    }
+
+    .production-days-grid {
+        padding-left: 28px;
+    }
+
+    .production-days-grid::before {
+        left: 10px;
+        transform: none;
+    }
+
+    .production-day-card,
+    .production-day-card:nth-child(odd),
+    .production-day-card:nth-child(even) {
+
+        height: 620px !important;
+        min-height: 620px !important;
+
+        display: block !important;
+
+        flex-basis: 620px !important;
+    }
+
+    .production-day-card::before {
+        left: 10px;
+        top: 45px;
+        transform: translateX(-50%);
+    }
+
+    .production-day-card .day-card-top,
+    .production-day-card:nth-child(odd) .day-card-top,
+    .production-day-card:nth-child(even) .day-card-top {
+
+        position: absolute !important;
+
+        top: 25px !important;
+        left: 35px !important;
+        right: auto !important;
+
+        width: calc(100% - 35px) !important;
+
+        transform: none;
+
+        align-items: flex-start;
+
+        text-align: left;
+    }
+
+    .production-day-card .day-images,
+    .production-day-card:nth-child(odd) .day-images,
+    .production-day-card:nth-child(even) .day-images {
+
+        top: 250px !important;
+
+        left: 35px !important;
+        right: auto !important;
+
+        width: calc(100% - 35px) !important;
+
+        transform: none;
+    }
+
+    .production-day-card .day-title,
+    .production-day-card:nth-child(odd) .day-title,
+    .production-day-card:nth-child(even) .day-title {
+
+        top: 450px !important;
+
+        left: 35px !important;
+        right: auto !important;
+
+        width: calc(100% - 35px) !important;
+
+        text-align: left;
+    }
+
+    .production-day-card .day-description,
+    .production-day-card:nth-child(odd) .day-description,
+    .production-day-card:nth-child(even) .day-description {
+
+        top: 490px !important;
+
+        left: 35px !important;
+        right: auto !important;
+
+        width: calc(100% - 35px) !important;
+
+        text-align: left;
     }
 }
