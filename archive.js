@@ -93,7 +93,12 @@ function setLanguage(language) {
     /* UPDATE TEXT */
 
     updateLanguageContent(language);
+      
+    /* UPDATE PRODUCTION DAYS */
 
+if (typeof renderProductionDays === "function") {
+    renderProductionDays();
+}
 
     /* UPDATE BUTTONS */
 
@@ -969,8 +974,10 @@ console.log(
     "ON AIR — Archive JS loaded successfully."
 );
 
+
 /* =====================================================
-   ON AIR — CINEMATIC PRODUCTION DIARY
+   ON AIR — PRODUCTION DAYS ARCHIVE
+   CINEMATIC DIARY — AR / EN
 ===================================================== */
 
 const productionDays = [
@@ -978,25 +985,40 @@ const productionDays = [
     {
         number: "01",
 
-        title: "اليوم الأول",
+        titleAr: "اليوم الأول",
+        titleEn: "DAY ONE",
 
         status: "open",
 
-        date: "29 يونيو 2026",
+        statusAr: "مفتوح",
+        statusEn: "OPEN",
+
+        dateAr: "29 يونيو 2026",
+        dateEn: "29 JUNE 2026",
 
         images: [
             "images/meeting2.png.jpeg",
             "images/meeting3.png.jpeg"
         ],
 
-        description:
+        descriptionAr:
             "أول خطوة في طريق الحكاية. بداية التحضير، أول اجتماع، وأول لحظة حسّينا فيها إن المشروع بقى حقيقي.",
 
-        events: [
+        descriptionEn:
+            "The first step into the story. The beginning of preparation, the first meeting, and the moment the project started to feel real.",
+
+        eventsAr: [
             "أول اجتماع للفريق",
             "تحديد المهام الأساسية",
             "مناقشة فكرة الفيلم",
             "بداية الحكاية"
+        ],
+
+        eventsEn: [
+            "First team meeting",
+            "Defining the main roles",
+            "Discussing the film idea",
+            "The beginning of the story"
         ]
     },
 
@@ -1004,23 +1026,37 @@ const productionDays = [
     {
         number: "02",
 
-        title: "اليوم الثاني",
+        titleAr: "اليوم الثاني",
+        titleEn: "DAY TWO",
 
         status: "open",
 
-        date: "7 يوليو 2026",
+        statusAr: "مفتوح",
+        statusEn: "OPEN",
+
+        dateAr: "7 يوليو 2026",
+        dateEn: "7 JULY 2026",
 
         images: [
             "images/meeting1.png.jpeg"
         ],
 
-        description:
+        descriptionAr:
             "يوم جديد من التحضير. تفاصيل أكتر، قرارات أكتر، والحكاية بدأت تاخد شكلها.",
 
-        events: [
+        descriptionEn:
+            "Another day of preparation. More details, more decisions, and the story began to take shape.",
+
+        eventsAr: [
             "معلومات وبحث عن الفكرة",
             "تجهيز خطة الفيلم",
             "بداية كتابة السيناريو"
+        ],
+
+        eventsEn: [
+            "Researching the idea",
+            "Preparing the film plan",
+            "Beginning the screenplay"
         ]
     },
 
@@ -1028,23 +1064,37 @@ const productionDays = [
     {
         number: "03",
 
-        title: "اليوم الثالث",
+        titleAr: "اليوم الثالث",
+        titleEn: "DAY THREE",
 
         status: "open",
 
-        date: "قريباً",
+        statusAr: "مفتوح",
+        statusEn: "OPEN",
+
+        dateAr: "قريباً",
+        dateEn: "COMING SOON",
 
         images: [
             "/images/day-03.jpg"
         ],
 
-        description:
+        descriptionAr:
             "التفاصيل الصغيرة بدأت تصنع الصورة الكبيرة.",
 
-        events: [
+        descriptionEn:
+            "The smallest details began shaping the bigger picture.",
+
+        eventsAr: [
             "مراجعة المشاهد",
             "تجهيز الأدوات",
             "مراجعة خطة التصوير"
+        ],
+
+        eventsEn: [
+            "Reviewing the scenes",
+            "Preparing the equipment",
+            "Reviewing the shooting plan"
         ]
     },
 
@@ -1052,59 +1102,80 @@ const productionDays = [
     {
         number: "04",
 
-        title: "اليوم الرابع",
+        titleAr: "اليوم الرابع",
+        titleEn: "DAY FOUR",
 
         status: "locked",
 
-        date: "",
+        statusAr: "مغلق",
+        statusEn: "LOCKED",
+
+        dateAr: "",
+        dateEn: "",
 
         images: [],
 
-        description: "",
+        descriptionAr: "",
+        descriptionEn: "",
 
-        events: []
+        eventsAr: [],
+        eventsEn: []
     },
 
 
     {
         number: "05",
 
-        title: "اليوم الخامس",
+        titleAr: "اليوم الخامس",
+        titleEn: "DAY FIVE",
 
         status: "locked",
 
-        date: "",
+        statusAr: "مغلق",
+        statusEn: "LOCKED",
+
+        dateAr: "",
+        dateEn: "",
 
         images: [],
 
-        description: "",
+        descriptionAr: "",
+        descriptionEn: "",
 
-        events: []
+        eventsAr: [],
+        eventsEn: []
     },
 
 
     {
         number: "06",
 
-        title: "اليوم السادس",
+        titleAr: "اليوم السادس",
+        titleEn: "DAY SIX",
 
         status: "locked",
 
-        date: "",
+        statusAr: "مغلق",
+        statusEn: "LOCKED",
+
+        dateAr: "",
+        dateEn: "",
 
         images: [],
 
-        description: "",
+        descriptionAr: "",
+        descriptionEn: "",
 
-        events: []
+        eventsAr: [],
+        eventsEn: []
     }
 
 ];
 
 
-/* =========================================================
-   RENDER CINEMATIC DAYS
-========================================================= */
+/* =====================================================
+   RENDER PRODUCTION DAYS
+===================================================== */
 
 function renderProductionDays() {
 
@@ -1116,180 +1187,276 @@ function renderProductionDays() {
     if (!grid) return;
 
 
+    const language =
+        document.documentElement.lang === "en"
+            ? "en"
+            : "ar";
+
+
+    /* -----------------------------------------------
+       CLEAR CURRENT DAYS
+    ----------------------------------------------- */
+
     grid.innerHTML = "";
 
 
-    productionDays.forEach(
-        function(day, index) {
+    productionDays.forEach(function (day, dayIndex) {
 
-            const card =
-                document.createElement(
-                    "article"
-                );
+        const card =
+            document.createElement("article");
 
 
-            card.className =
-                "production-day-card " +
-                (
-                    day.status === "locked"
-                        ? "locked"
-                        : ""
-                );
+        card.className =
+            "production-day-card " +
+            (day.status === "locked"
+                ? "locked"
+                : "");
 
 
-            card.dataset.day =
-                day.number;
+        card.dataset.day =
+            day.number;
 
 
-            /* =================================================
-               LOCKED DAY
-            ================================================= */
+        /* =================================================
+           LANGUAGE DATA
+        ================================================= */
 
-            if (
-                day.status === "locked"
-            ) {
+        const title =
+            language === "en"
+                ? day.titleEn
+                : day.titleAr;
 
-                card.innerHTML = `
 
-                    <div class="day-card-top">
+        const status =
+            language === "en"
+                ? day.statusEn
+                : day.statusAr;
 
-                        <span class="day-status">
-                            LOCKED
-                        </span>
 
-                        <span class="day-number">
-                            DAY ${day.number}
-                        </span>
+        const date =
+            language === "en"
+                ? day.dateEn
+                : day.dateAr;
 
+
+        const description =
+            language === "en"
+                ? day.descriptionEn
+                : day.descriptionAr;
+
+
+        const events =
+            language === "en"
+                ? day.eventsEn
+                : day.eventsAr;
+
+
+        /* =================================================
+           LOCKED DAYS
+        ================================================= */
+
+        if (day.status === "locked") {
+
+            card.innerHTML = `
+
+                <div class="day-card-top">
+
+                    <span class="day-status">
+                        ${status}
+                    </span>
+
+                    <span class="day-number">
+                        ${day.number}
+                    </span>
+
+                </div>
+
+
+                <h3 class="day-title">
+                    ${title}
+                </h3>
+
+
+                <div class="locked-content">
+
+                    <div class="lock-icon">
+                        🔒
                     </div>
 
-
-                    <h3 class="day-title">
-                        ${day.title}
-                    </h3>
-
-
-                    <div class="locked-content">
-
-                        <div class="lock-icon">
-                            🔒
-                        </div>
-
-                        <span>
-                            قريبًا
-                        </span>
-
-                    </div>
-
-                `;
-
-            }
-
-            
-
-            /* =================================================
-               OPEN DAY
-            ================================================= */
-
-            else {
-
-                /*
-                 * الصورة الأساسية:
-                 * بنستخدم أول صورة موجودة بالفعل
-                 * من غير إضافة صور جديدة.
-                 */
-                const mainImage =
-                    day.images &&
-                    day.images.length
-                        ? day.images[0]
-                        : "";
-
-
-                card.innerHTML = `
-
-                    <div class="day-card-top">
-
-                        <span class="day-status">
-                            DAY ${day.number}
-                        </span>
-
-                        <span class="day-number">
-                            ${day.number}
-                        </span>
-
-                        <div class="day-date">
-
-                            <span class="day-date-icon">
-                                ▣
-                            </span>
-
-                            <span>
-                                ${day.date}
-                            </span>
-
-                        </div>
-
-                    </div>
-
-
-                    <h3 class="day-title">
-                        ${day.title}
-                    </h3>
-
-
-                    <div class="day-images">
-
-                        <div class="day-image-wrapper">
-
-                            <img
-                                class="day-image"
-                                src="${mainImage}"
-                                alt="${day.title}"
-                                loading="lazy"
-                            >
-
-                        </div>
-
-                    </div>
-
-
-                    <p class="day-description">
-                        ${day.description}
-                    </p>
-
-
-                    <ul class="day-events">
-
+                    <span>
                         ${
-                            day.events
-                                .map(
-                                    event =>
-                                        `<li>${event}</li>`
-                                )
-                                .join("")
+                            language === "en"
+                                ? "COMING SOON"
+                                : "قريبًا"
                         }
+                    </span>
 
-                    </ul>
+                </div>
 
-                `;
-
-            }
-
-
-            grid.appendChild(card);
+            `;
 
         }
-    );
 
+
+        /* =================================================
+           OPEN DAYS
+        ================================================= */
+
+        else {
+
+            /* ---------------------------------------------
+               EVENTS
+            --------------------------------------------- */
+
+            const eventsHTML =
+                events
+                    .map(function (event) {
+
+                        return `
+                            <li>
+                                ${event}
+                            </li>
+                        `;
+
+                    })
+                    .join("");
+
+
+            /* ---------------------------------------------
+               IMAGES
+               EVERY IMAGE IS RENDERED
+            --------------------------------------------- */
+
+            const imagesHTML =
+                day.images
+                    .map(function (image, imageIndex) {
+
+                        return `
+
+                            <div
+                                class="
+                                    day-image-wrapper
+                                    day-photo-${imageIndex + 1}
+                                "
+                            >
+
+                                <img
+                                    class="day-image"
+                                    src="${image}"
+                                    alt="${title}"
+                                    loading="lazy"
+                                >
+
+
+                                <div class="day-image-frame">
+
+                                    <span>
+                                        ON AIR | بِالعَافيَه
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        `;
+
+                    })
+                    .join("");
+
+
+            /* ---------------------------------------------
+               CARD
+            --------------------------------------------- */
+
+            card.innerHTML = `
+
+                <div class="day-card-top">
+
+                    <span class="day-status">
+                        ${status}
+                    </span>
+
+
+                    <span class="day-number">
+                        ${day.number}
+                    </span>
+
+
+                    <div class="day-date">
+
+                        <span class="day-date-icon">
+                            ▣
+                        </span>
+
+                        <span>
+                            ${date}
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <h3 class="day-title">
+                    ${title}
+                </h3>
+
+
+                <div class="day-images">
+
+                    ${imagesHTML}
+
+                </div>
+
+
+                <p class="day-description">
+                    ${description}
+                </p>
+
+
+                <ul class="day-events">
+
+                    ${eventsHTML}
+
+                </ul>
+
+            `;
+
+        }
+
+
+        /* =================================================
+           ADD CARD
+        ================================================= */
+
+        grid.appendChild(card);
+
+
+        /* =================================================
+           CINEMATIC STAGGER
+        ================================================= */
+
+        card.style.setProperty(
+            "--day-index",
+            dayIndex
+        );
+
+    });
+
+
+    /* =====================================================
+       REINITIALIZE SCROLL REVEAL
+    ===================================================== */
 
     initProductionDayReveal();
 
 }
 
 
-/* =========================================================
-   CINEMATIC SCROLL REVEAL
-========================================================= */
+/* =====================================================
+   PRODUCTION DAYS — SCROLL REVEAL
+   ONE DAY AT A TIME
+===================================================== */
 
 function initProductionDayReveal() {
 
@@ -1302,35 +1469,40 @@ function initProductionDayReveal() {
     if (!cards.length) return;
 
 
-    /*
-     * Reduced motion
-     */
+    /* -----------------------------------------------
+       REDUCED MOTION
+    ----------------------------------------------- */
+
     if (
         window.matchMedia(
             "(prefers-reduced-motion: reduce)"
         ).matches
     ) {
 
-        cards.forEach(
-            card => {
+        cards.forEach(function (card) {
 
-                card.classList.add(
-                    "is-visible"
-                );
+            card.classList.add(
+                "is-visible"
+            );
 
-            }
-        );
+        });
 
         return;
+
     }
 
 
+    /* -----------------------------------------------
+       OBSERVER
+    ----------------------------------------------- */
+
     const observer =
         new IntersectionObserver(
-            function(entries) {
+
+            function (entries) {
 
                 entries.forEach(
-                    function(entry) {
+                    function (entry) {
 
                         if (
                             !entry.isIntersecting
@@ -1352,35 +1524,33 @@ function initProductionDayReveal() {
                 );
 
             },
+
             {
-                threshold: 0.22,
+                threshold: 0.18,
 
                 rootMargin:
                     "0px 0px -12% 0px"
             }
+
         );
 
 
-    cards.forEach(
-        card => {
+    cards.forEach(function (card) {
 
-            observer.observe(
-                card
-            );
+        observer.observe(card);
 
-        }
-    );
+    });
 
 }
 
 
-/* =========================================================
-   INITIALIZE
-========================================================= */
+/* =====================================================
+   INITIALIZE PRODUCTION DAYS
+===================================================== */
 
 document.addEventListener(
     "DOMContentLoaded",
-    function() {
+    function () {
 
         renderProductionDays();
 
